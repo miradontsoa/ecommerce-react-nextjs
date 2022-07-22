@@ -1,0 +1,42 @@
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+}
+.inputGroup{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* background: #f4f; */
+}
+.input{
+    display: block;
+    width: 100%;
+}
+.inputEmail{
+    flex: 1 0;
+    margin-right: 4px;
+}
+.button{
+    border: none;
+    background: none;
+    padding: 0;
+    width: auto;
+    flex: 0 auto;
+}
+.notes{
+    margin-top: 1rem;
+    width: 100%;
+}
+.form.vertical .inputGroup .input{
+    flex: 0 0 auto;
+    width: 100%;
+}
+.form.vertical .inputGroup .inputEmail{
+    margin-right: 0;
+}
+.form.vertical .inputGroup .button{
+    margin-top: 4px;
+    width: 100%;
+    flex: 0 0 auto;
+}

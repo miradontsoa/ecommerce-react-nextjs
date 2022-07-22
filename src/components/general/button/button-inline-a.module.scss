@@ -1,0 +1,31 @@
+.btnInlineA {
+    // padding-left: 0;
+    // padding-right: 0;
+    display: inline-flex;
+    align-items: center;
+
+    .icon {
+        line-height: 1;
+    }
+
+
+    &.iconLeft {
+        * {
+            order: 2;
+        }
+        .icon {
+            order: 1;
+            margin-right: 0.5em;
+        }
+    }
+
+    &.iconRight {
+        .icon {
+            order: 2;
+            margin-left: 0.5em;
+        }
+        * {
+            order: 1;
+        }
+    }
+}

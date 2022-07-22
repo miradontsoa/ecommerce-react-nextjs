@@ -1,0 +1,135 @@
+@import "/src/styles/variables";
+
+// navbar A main style
+.navbarA {
+  padding: 0px;
+  color: currentColor;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .collapsing {
+    transition: 0s;
+    height: initial;
+  }
+}
+
+// navContainer
+.navContainer {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem var(--ck-page-margin-x);
+  margin-top: calc(var(--page-margin-t-lg) - 1rem);
+
+  &.full {
+    max-width: 100%;
+  }
+
+  &.content {
+    max-width: var(--ck-navbar-content-width);
+    // max-width: var(--ck-width-large);
+  }
+}
+
+// logo style
+.logo {
+  color: currentColor;
+  margin-right: 1rem;
+  margin-left: 0;
+  display: flex;
+  align-items: center;
+
+
+  .logoImage {}
+
+  img {
+    height: 40px;
+  }
+
+  .logoText {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    .subTitle {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+.navbarCollapse {
+  width: 100%;
+  @media screen and (min-width: $breakpoint-lg) {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    .leftNavElt {
+      display: flex;
+      margin-right: auto;
+    }
+
+    .rightNavElt {
+      display: flex;
+      margin-left: auto;
+
+    }
+  }
+}
+
+// menu button
+.menuButton {
+  border: none;
+  height: 48px;
+  width: 48px;
+  padding: 0;
+  border-radius: 8px;
+  align-self: flex-end;
+  position: fixed;
+  top: 18px;
+  right: 16px;
+  left: auto;
+  color: var(--ck-fg-color);
+  background-color: transparent;
+  display: block;
+
+  &:active,
+  &:focus {
+    box-shadow: none;
+    outline: 0px;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    right: auto;
+    left: auto;
+    top: auto;
+    position: relative;
+    display: none;
+  }
+
+}

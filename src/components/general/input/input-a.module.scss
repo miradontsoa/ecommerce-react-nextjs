@@ -1,0 +1,109 @@
+.inputA {
+    /* display: block; */
+    /* width: 100%; */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
+
+
+    color: currentColor;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none;
+}
+
+.input {
+    background-clip: padding-box;
+    appearance: none;
+    box-shadow: none;
+    border: none;
+    height: 48px;
+    padding: 4px 16px;
+    outline: 0;
+    background-color: transparent;
+}
+
+/* Size */
+.size-small {
+    height: 40px;
+    padding: 2px 16px;
+}
+
+.size-medium {
+    height: 48px;
+    padding: 4px 16px;
+}
+
+.size-large {
+    height: 64px;
+    padding: 8px 24px;
+}
+
+/* Appearance */
+.aspect-outline {
+    color: inherit;
+    border: 2px solid currentColor;
+    border-radius: 8px;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    &.color-current {
+        border-color: currentColor;
+    }
+
+    &.color-primary {
+        border-color: var(--ck-primary);
+    }
+}
+
+.aspect-underline {
+    border: none;
+    color: inherit;
+    border-bottom: 2px solid currentColor;
+    border-radius: 0px;
+    position: relative;
+    background-color: transparent;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: currentColor;
+        opacity: 0.05;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+
+    &:focus-within {
+        &:before {
+            visibility: visible;
+        }
+    }
+
+    &.color-current {
+        border-color: currentColor;
+    }
+
+    &.color-primary {
+        border-color: var(--ck-primary);
+    }
+}

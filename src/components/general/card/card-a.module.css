@@ -1,0 +1,121 @@
+.cardA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.bgLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.bgLayer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* border radius */
+.borderRadiusSmall{
+    border-radius: 0.5rem;
+}
+.borderRadiusMedium{
+    border-radius: 1rem;
+}
+.borderRadiusLarge{
+    border-radius: 2rem;
+}
+.borderRadiusXLarge{
+    border-radius: 3rem;
+}
+
+/* Paddings */
+
+/* padding top */
+.container.paddingTopNone {
+    padding-top: 0px;
+}
+
+.container.paddingTopSmall {
+    padding-top: 3rem;
+}
+
+.container.paddingTopMedium {
+    padding-top: var(--ck-section-margin-y);
+}
+
+.container.paddingTopLarge {
+    padding-top: var(--ck-section-margin-y);
+}
+
+/* padding bottom */
+.container.paddingBottomNone {
+    padding-bottom: 0px;
+}
+
+.container.paddingBottomSmall {
+    padding-bottom: 3rem;
+}
+
+.container.paddingBottomMedium {
+    padding-bottom: var(--ck-section-margin-y);
+}
+
+.container.paddingBottomLarge {
+    padding-bottom: var(--ck-section-margin-y);
+}
+
+/* padding left */
+.container.paddingLeftNone {
+    padding-left: 0px;
+}
+
+.container.paddingLeftSmall {
+    padding-left: 3rem;
+}
+
+.container.paddingLeftMedium {
+    padding-left: var(--ck-section-margin-y);
+}
+
+.container.paddingLeftLarge {
+    padding-left: var(--ck-section-margin-y);
+}
+
+/* padding right */
+.container.paddingRightNone {
+    padding-right: 0px;
+}
+
+.container.paddingRightSmall {
+    padding-right: 3rem;
+}
+
+.container.paddingRightMedium {
+    padding-right: var(--ck-section-margin-y);
+}
+
+.container.paddingRightLarge {
+    padding-right: var(--ck-section-margin-y);
+}

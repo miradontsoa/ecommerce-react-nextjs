@@ -1,0 +1,49 @@
+@import "/src/styles/variables";
+.featureB {
+  border-radius: 8px;
+  border: none;
+  --header-height: 5rem;
+  transition: 0.3s;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+  margin-top: calc(var(--header-height) / 2);
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: currentColor;
+    opacity: 0.1;
+    transition: 0.3s;
+  }
+}
+.header {
+  margin-bottom: 0rem;
+  border: none;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  background: transparent;
+  // margin-top: 2rem;
+  transition: 0.3s;
+  margin-top: calc(-1 * var(--header-height) / 2);
+  // &:first-child{
+  //   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  // }
+}
+.body {
+  padding: 2rem;
+}
+.bodyTitle {
+  margin-bottom: 1rem;
+}

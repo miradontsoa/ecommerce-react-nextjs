@@ -1,0 +1,59 @@
+
+.heroA {
+    width: 100%;
+    min-height: 512px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.heroBg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.heroBgImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heroBody {
+    align-self: flex-end;
+    position: relative;
+    padding: 4rem 1rem;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+        padding: 4rem var(--ck-page-margin-x);
+    }
+
+    @media screen and (min-width: 992px) {
+        padding: 5.5rem var(--ck-page-margin-x);
+        padding-bottom: 4rem;
+    }
+}
+
+.heroContainer {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.heroContent {}
+
+.heroImage {
+    margin-top: 3rem;
+}
+
+@media screen and (min-width: 992px) {
+    .heroImage {
+        margin-top: 5rem;
+    }
+}
+
+.contentWidth {}

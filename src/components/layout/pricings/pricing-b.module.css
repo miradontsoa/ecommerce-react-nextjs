@@ -1,0 +1,88 @@
+.pricingB {
+  --header-height: 5rem;
+  --text-color: #252627;
+  --header-text-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  border: none;
+  transition: 0.3s;
+}
+.header {
+  border: none;
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  background: transparent;
+  transition: 0.3s;
+}
+.body {
+  padding: 2rem;
+}
+.price {
+  text-align: center;
+}
+.title{
+  text-align: center;
+}
+.footer {
+  padding: 2rem;
+  padding-top: 0;
+}
+
+/* feature list */
+.featureList {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .featureList {
+    font-size: 1.375rem;
+  }
+}
+.featureIcon {
+    margin-right: 0.5rem;
+    font-size: 1.25em;
+    line-height: 0.75;
+    vertical-align: text-bottom;
+    width: 1em;
+    height: 1em;
+    color: var(--color);
+}
+.featureIcon svg{
+    width: 1em;
+    height: 1em;
+}
+.featureDisabled{
+    opacity: 0.5;
+}
+
+/* elevation */
+.elevSm {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.elevMd {
+  box-shadow: 0px 9px 32px rgba(0, 0, 0, 0.2);
+}
+
+.elevLg {
+  box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+/* Border radius */
+.rdSm{
+  border-radius: 8px;
+}
+
+.rdMd{
+  border-radius: 16px;
+}
+
+.rdLg{
+  border-radius: 24px;
+}

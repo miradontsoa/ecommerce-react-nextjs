@@ -1,0 +1,65 @@
+@import "/src/styles/variables";
+
+.body {}
+
+.image {
+  margin-bottom: 2rem;
+}
+
+.bodyTitle {
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: 700;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    font-size: 2rem;
+  }
+}
+
+.elevSm {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.elevMd {
+  box-shadow: 0px 9px 32px rgba(0, 0, 0, 0.2);
+}
+
+.elevLg {
+  box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.2);
+}
+
+.pSm {
+  padding: 0.5rem;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 1.5rem;
+  }
+}
+
+.pMd {
+  padding: 1.5rem;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 2.5rem;
+  }
+}
+
+.pLg {
+  padding: 2rem;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 3rem;
+  }
+}
+
+
+.rdSm{
+  border-radius: 8px;
+}
+
+.rdMd{
+  border-radius: 16px;
+}
+
+.rdLg{
+  border-radius: 24px;
+}

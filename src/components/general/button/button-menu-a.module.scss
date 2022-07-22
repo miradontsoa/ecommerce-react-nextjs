@@ -1,0 +1,137 @@
+.buttonMenuA {
+    $barWidth: 2px;
+    $dotMargin: 2px;
+    $dotWidth: 8px;
+    $iconWidth: ($dotWidth*3+$dotMargin*4);
+    $iconHeight: ($dotWidth*2+$dotMargin*2);
+    // background: #f4f;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .dots {
+        width: $iconWidth;
+        height: $iconWidth;
+        display: block;
+        position: relative;
+
+        &.align-right {
+            align-items: flex-end;
+        }
+    }
+
+    .dot1,
+    .dot2 {
+        display: block;
+        height: $dotWidth;
+        width: $dotWidth;
+        background: currentColor;
+        transition: 0.3s;
+        border-radius: $dotWidth*2;
+        position: absolute;
+
+        &::before,
+        &::after {
+            position: absolute;
+            content: "";
+            height: $dotWidth;
+            width: $dotWidth;
+            background: currentColor;
+            transition: 0.3s;
+            border-radius: $dotWidth*2;
+            left: 0;
+        }
+
+        &::before {
+            left: calc(-100% - #{$dotMargin*2});
+        }
+
+        &::after {
+            left: auto;
+            right: calc(-100% - #{$dotMargin*2});
+        }
+    }
+
+    &.dotSquare {
+
+        .dot1,
+        .dot2 {
+            border-radius: 0px;
+        }
+    }
+
+    .dot1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: (-$dotMargin -$dotWidth/2);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .dot2 {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        margin-bottom: (-$dotMargin - $dotWidth/2);
+        transform: translateX(-50%) translateY(50%);
+    }
+
+    // &:hover,
+    &.menuVisible,
+    &.menuClose {
+
+        .dot1,
+        .dot2 {
+            width: $barWidth;
+            border-radius: 1px;
+
+            &::before,
+            &::after {
+                transform: scale(0);
+            }
+        }
+
+        .dot1 {
+            top: 0;
+            margin-top: 0;
+            height: $iconWidth;
+            transform: translateX(-50%) rotate(45deg) scaleX(0.8);
+        }
+
+        .dot2 {
+            bottom: 0;
+            margin-bottom: 0;
+            height: $iconWidth;
+            transform: translateX(-50%) rotate(-45deg) scaleX(0.8);
+        }
+    }
+}
+
+.buttonMenuA.menuVisible {
+    $lineWidth : 4px;
+    .dot1,
+    .dot2 {
+        border-radius: 2px;
+
+        &::before,
+        &::after {
+            transform: scale(0);
+        }
+    }
+
+    .dot1 {
+        top: 0;
+        margin-top: 0;
+        height: 32px;
+        width: $lineWidth;
+        transform: translateX(-50%) rotate(45deg) scaleX(0.8);
+    }
+
+    .dot2 {
+        bottom: 0;
+        margin-bottom: 0;
+        height: 32px;
+        width: $lineWidth;
+        transform: translateX(-50%) rotate(-45deg) scaleX(0.8);
+    }
+}

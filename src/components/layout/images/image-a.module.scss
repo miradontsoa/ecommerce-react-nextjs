@@ -1,0 +1,48 @@
+.imageA {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+}
+.imageLayer {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.scaleOnHover {
+  img {
+    transition: 0.3s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.5);
+      transition: 5s linear;
+    }
+  }
+}
+img.fitCover {
+  object-fit: cover;
+}
+.shapeSquare {
+  border-radius: 0px;
+}
+.shapeRoundedSmall {
+  border-radius: 8px;
+}
+.shapeRoundedMedium {
+  border-radius: 16px;
+}
+.shapeRoundedLarge {
+  border-radius: 24px;
+}
+.shapeCircle {
+  border-radius: 100vw;
+}

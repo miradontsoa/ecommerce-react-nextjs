@@ -1,0 +1,83 @@
+.title-1 {
+    font-weight: bold;
+    font-size: 3.5rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        font-size: 6.5rem;
+    }
+}
+
+.title-2 {
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: calc(1.575rem + 3.9vw);
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        font-size: 4.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.title-3 {
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: calc(1.475rem + 2.7vw);
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.text-medium {
+    font-size: 1rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: inherit;
+    }
+
+    ul,
+    li {
+        font-size: inherit;
+    }
+}
+
+.text-large {
+    font-size: 1.25rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: inherit;
+    }
+
+    ul,
+    li {
+        font-size: inherit;
+    }
+}
+
+.text-xlarge {
+    font-size: 1.375rem;
+
+    @media screen and (min-width: $breakpoint-lg) {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: inherit;
+    }
+
+    ul,
+    li {
+        font-size: inherit;
+    }
+}

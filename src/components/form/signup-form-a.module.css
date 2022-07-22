@@ -1,0 +1,22 @@
+.button{
+    border: none;
+    background: none;
+    padding: 0;
+    width: 100%;
+}
+
+.paddingNone{
+    padding: 0rem;
+}
+.paddingSmall{
+    padding: 0.5rem;
+}
+.paddingMedium{
+    padding: 1rem;
+}
+.paddingLarge{
+    padding: 2rem;
+}
+
+.container{
+}
