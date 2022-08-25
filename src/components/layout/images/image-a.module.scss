@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: auto;
   align-items: center;
+  margin: 0;
 }
 .imageLayer {
   grid-column: 1;
@@ -18,14 +19,35 @@
   }
 }
 .scaleOnHover {
+  --speed : 5s;
+  --scale : 1.5;
   img {
     transition: 0.3s;
   }
+  
   &:hover {
     img {
-      transform: scale(1.5);
-      transition: 5s linear;
+      transform: scale(var(--scale));
+      transition: var(--speed) linear;
     }
+  }
+  &.speed-slow{
+  --speed : 2.5s;
+  }
+  &.speed-medium{
+  --speed : 1s;
+  }
+  &.speed-fast{
+    --speed : 0.3s;
+  }
+  &.scale-small{
+    --scale : 1.1;
+  }
+  &.scale-medium{
+    --scale : 1.2;
+  }
+  &.scale-large{
+    --scale : 1.5;
   }
 }
 img.fitCover {

@@ -15,7 +15,7 @@ import ImageA from "@components/layout/images/image-a";
 import SectionA from "@components/sections/section-a";
 import ImageB from "@components/layout/images/image-b";
 import FeatureA from "@components/layout/features/feature-a";
-import IconA from "@components/general/icon/icon-a";
+import IconE from "@components/general/icon/icon-e";
 import FeatureB from "@components/layout/features/feature-b";
 import IconB from "@components/general/icon/icon-b";
 import PricingA from "@components/layout/pricings/pricing-a";
@@ -23,7 +23,7 @@ import ReviewA from "@components/layout/reviews/review-a";
 import NewsletterFormA from "@components/form/newsletter-form-a";
 import CardA from "@components/general/card/card-a";
 import SignupFormA from "@components/form/signup-form-a";
-import FooterA from "@components/footer/footer-a";
+import FooterB from "@components/footer/footer-b";
 
 const LandingPageA: NextPage = () => {
   const [active, setActive] = useState("About");
@@ -256,7 +256,7 @@ const LandingPageA: NextPage = () => {
                 <div className="col">
                   <FeatureA
                     imageElement={
-                      <IconA
+                      <IconE
                         size="large"
                         shape="rounded-medium"
                         className="text-primary"
@@ -301,7 +301,7 @@ const LandingPageA: NextPage = () => {
                 <div className="col">
                   <FeatureA
                     imageElement={
-                      <IconA
+                      <IconE
                         size="large"
                         shape="rounded-medium"
                         className="text-secondary"
@@ -347,7 +347,7 @@ const LandingPageA: NextPage = () => {
                 <div className="col">
                   <FeatureA
                     imageElement={
-                      <IconA
+                      <IconE
                         size="large"
                         shape="rounded-medium"
                         className="text-success"
@@ -881,7 +881,7 @@ const LandingPageA: NextPage = () => {
       </main>
 
       {/* Footer */}
-      <FooterA
+      <FooterB
         navingationLinks={[
           {
             name: "Products",

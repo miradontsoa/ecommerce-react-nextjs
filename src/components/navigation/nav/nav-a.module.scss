@@ -3,9 +3,10 @@
     list-style: none;
     margin-bottom: 0;
     line-height: 1.5;
+
     >li {
-        margin-left: 1.5rem;
-        margin-right: 1.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
 
         &:first-child {
             margin-left: 0;
@@ -15,17 +16,125 @@
             margin-right: 0;
         }
 
-        >a {
-            padding: 0.5rem 0rem;
+        >.navLink{
+            padding-left: 0;
+            padding-right: 0;
             color: currentColor;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-
+            
             &:hover {
                 opacity: 0.7;
             }
         }
+        > .arrowIcon{
+            padding-left: 0.5em;
+        }
+    }
+
+    >.menuItem {
+
+        // first level menu
+        &.hasChild {
+            >.subMenuBtn > .arrowIcon .arrowIconRight {
+                display: none;
+            }
+
+            >.subMenuBtn > .arrowIcon .arrowIconDown {
+                display: inline-block;
+            }
+        }
+
+        >.subMenu {
+            top: 100%;
+            left: 0;
+        }
+    }
+
+    ul,
+    li {
+        list-style: none;
+        //padding: 0;
+    }
+}
+
+.menuItem {
+    display: flex;
+    position: relative;
+    white-space: nowrap;
+    padding: 0 0.5rem;
+    align-items: center;
+    .navLink {
+        display: flex;
+        flex: 1;
+        // padding: 0.5rem 0rem;
+        padding: 0.5rem 0.5rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &.hasChild {
+
+        >.subMenuBtn > .arrowIcon .arrowIconRight {
+            display: inline-block;
+        }
+
+        >.subMenuBtn > .arrowIcon .arrowIconDown {
+            display: none;
+        }
+    }
+}
+
+.subMenu {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    min-width: 100%;
+    border-radius: 0.5rem;
+    padding: 0;
+    border: 1px solid rgba(127, 127, 127, 0.2);
+    background-color: rgba(255,255,255,0.5);
+    // display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    &.showSubMenu{
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+    .subMenu {
+        top: 0;
+    }
+
+    .menuItem{
+        border-bottom: 1px solid rgba(127, 127, 127, 0.2);
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+
+}
+.subMenuBtn{
+    border: none;
+    background: none;
+    padding: 0;
+}
+.arrowIcon {
+    display: block;
+    line-height: 0;
+    margin-left: 0.5em;
+    // margin-top: 0.45em;
+    .arrowIconDown,
+    .arrowIconRight {
+        display: inline-block;
+    }
+
+    svg {
+        width: 1em;
+        height: 1em;
+        font-size: 1em;
     }
 }

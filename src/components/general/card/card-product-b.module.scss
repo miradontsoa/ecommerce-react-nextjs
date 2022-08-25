@@ -1,0 +1,76 @@
+.cardProductB {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    --gutter-x : 3rem;
+    margin-right: calc(var(--gutter-x)/ -2);
+    margin-left: calc(var(--gutter-x)/ -2);
+}
+
+.cardImage {
+    border-radius: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    width: 100%;
+
+
+    @media screen and (min-width: 992px) {
+        padding-top: 0;
+        flex: 0 0 auto;
+        width: 50%;
+        padding-left: calc(var(--gutter-x)/ 2);
+        padding-right: calc(var(--gutter-x)/ 2);
+    }
+
+}
+
+.cardBody {
+    flex: 1 1 auto;
+    padding: 0;
+    padding-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    @media screen and (min-width: 992px) {
+        padding-top: 0;
+        flex: 0 0 auto;
+        width: 50%;
+        padding-left: calc(var(--gutter-x)/ 2);
+        padding-right: calc(var(--gutter-x)/ 2);
+    }
+}
+.cardBodyContent{
+
+}
+.line {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* text or content */
+.title {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+    // line-height: 1.7;
+}
+.price {
+    // line-height: 1.2;
+    font-size: 1rem;
+    margin-bottom: 0;
+    @media screen and (min-width:992px) {
+        font-size: 1.125rem;
+    }
+}
+.colors{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+.description{
+    margin-bottom: 0;
+}

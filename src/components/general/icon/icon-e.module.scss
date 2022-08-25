@@ -1,0 +1,92 @@
+.IconD {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  min-width: 40px;
+  position: relative;
+  > *{
+      z-index: 0;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: currentColor;
+    opacity: 0.2;
+    border-radius: inherit;
+    z-index: 0;
+  }
+}
+.colorCurrent {
+  color: currentColor;
+//   background-color: rgba(var(--ck-primary-rgb), 0.2);
+}
+.colorPrimary {
+  color: var(--ck-primary);
+//   background-color: rgba(var(--ck-primary-rgb), 0.2);
+}
+.colorSecondary {
+  color: var(--ck-secondary);
+//   background-color: rgba(var(--ck-secondary-rgb), 0.2);
+}
+
+.sizeSmall {
+  min-height: 40px;
+  min-width: 40px;
+  img,
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  > *{
+    font-size: 24px;
+    line-height: 1;
+  }
+}
+.sizeMedium {
+  min-height: 64px;
+  min-width: 64px;
+  img,
+  svg {
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+  }
+  > *{
+    font-size: 32px;
+    line-height: 1;
+  }
+}
+.sizeLarge {
+  min-height: 80px;
+  min-width: 80px;
+  img,
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+  > *{
+    font-size: 40px;
+    line-height: 1;
+  }
+}
+
+.shapeSquare {
+  border-radius: 0px;
+}
+.shapeRoundedSmall {
+  border-radius: 8px;
+}
+.shapeRoundedMedium {
+  border-radius: 16px;
+}
+.shapeRoundedLarge {
+  border-radius: 24px;
+}
+.shapeCircle {
+  border-radius: 100vw;
+}

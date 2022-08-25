@@ -24,14 +24,29 @@
     border-color: var(--ck-secondary);
 }
 
-.sizeSmall {
-    min-height: 40px;
-    min-width: 40px;
+.size-x-small {
+    $size: 20px;
 
     img,
     svg {
-        // width: 24px;
-        height: 24px;
+        width: $size;
+        height: $size;
+    }
+
+    >* {
+        // font-size: $size;
+        line-height: 1;
+    }
+}
+
+.size-small {
+    $size: 24px;
+    min-height: $size;
+    min-width: $size;
+
+    img,
+    svg {
+        height: $size;
     }
 
     >* {
@@ -40,7 +55,7 @@
     }
 }
 
-.sizeMedium {
+.size-medium {
     min-height: 64px;
     min-width: 64px;
 
@@ -57,7 +72,7 @@
     }
 }
 
-.sizeLarge {
+.size-large {
     min-height: 80px;
     min-width: 80px;
 
@@ -73,22 +88,22 @@
     }
 }
 
-.shapeSquare {
+.shape-square {
     border-radius: 0px;
 }
 
-.shapeRoundedSmall {
+.shape-rounded-small {
     border-radius: 8px;
 }
 
-.shapeRoundedMedium {
+.shape-rounded-medium {
     border-radius: 16px;
 }
 
-.shapeRoundedLarge {
+.shape-rounded-large {
     border-radius: 24px;
 }
 
-.shapeCircle {
+.shape-circle {
     border-radius: 100vw;
 }

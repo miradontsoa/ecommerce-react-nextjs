@@ -1,42 +1,31 @@
-.imageB{
+.imageB {
+    --image-b-m-x: 3rem;
+    --image-b-m-y: 4.5rem;
     position: relative;
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto;
-    align-items: center;
-}
-.imageLayer{
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    img{
-        width: 100%;
-        height: 100%;
+    padding-right: var(--image-b-m-x);
+    padding-bottom: var(--image-b-m-y);
+
+    @media screen and (min-width: 768px) {
+        --image-b-m-x: 2rem;
+        --image-b-m-y: 3rem;
+    }
+
+    @media screen and (min-width: 992px) {
+        --image-b-m-x: 6rem;
+        --image-b-m-y: 9rem;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
-.scaleOnHover{
-    img{
-        transition: 0.3s;
-    }
-    &:hover{
-        img{
-            transform: scale(1.5);
-            transition: 5s linear;
-        }
-    }
+
+.img1{
+    position: relative;
 }
-img.fitCover{
-    object-fit: cover;
-}
-.roundedSmall{
-    border-radius: 8px;
-}
-.roundedMedium{
-    border-radius: 16px;
-}
-.roundedLarge{
-    border-radius: 24px;
+.img2{
+    position: absolute;
+    left: var(--image-b-m-y);
+    right: 0;
+    bottom: 0;
 }

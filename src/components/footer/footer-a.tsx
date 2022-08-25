@@ -1,80 +1,46 @@
-import classNames from "classnames";
-import React from "react";
-import styles from "./footer-a.module.css";
+import NavA from "@components/navigation/nav/nav-a";
+import NavSocialA from "@components/navigation/nav/nav-social-a";
+import { MenuItem } from "@typescript/types";
 
 type Props = {
-  notePrimaryElement?: React.ReactElement;
-  noteSecondaryElement?: React.ReactElement;
-  socialInviteText?: string;
-  navingationLinks?: {
-    name: string;
-    url: string;
-  }[];
-  socialLinks?: {
-    name: string;
-    url: string;
-    icon?: React.ReactSVGElement;
-  }[];
+  footerMenu?: MenuItem[];
+  socialMenu?: MenuItem[];
+  noteText?: string;
 };
-const FooterA = ({
-  navingationLinks,
-  socialLinks,
-  socialInviteText,
-  notePrimaryElement,
-  noteSecondaryElement,
-}: Props) => {
-  return (
-    <div className={classNames(styles.footerA)}>
-      <div className={classNames(styles.wrapper, "container-fluid")}>
-        <div className={classNames(styles.footerPrimary)}>
-          <div className="row">
-            <div className="col col-12 col-lg-6">
-              {navingationLinks && (
-                <ul className={classNames(styles.navFooter)}>
-                  {navingationLinks.map((navigationLink) => {
-                    return (
-                      <li key={navigationLink.name} className={classNames(styles.navItem)}>
-                        <a className={classNames(styles.navLink)} href={navigationLink.url}>
-                          {navigationLink.name}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
-            </div>
-            <div className="col col-12 col-lg-6 d-lg-flex justify-content-lg-end mt-3 mt-lg-0">
-              {socialLinks && (
-                <div className={classNames(styles.social)}>
-                  {socialInviteText && <p className={classNames(styles.inviteText)}>{socialInviteText}</p>}
-                  <ul className={classNames(styles.navFooter, styles.navSocial)}>
-                    {socialLinks.map((socialLink) => {
-                      return (
-                        <li key={socialLink.name} className={classNames(styles.navItem)}>
-                          <a className={classNames(styles.navSocialIcon)} href={socialLink.url}>
-                            {socialLink.name}
-                          </a>
-                          {/* <a className="icon-md" href="">
-                            <i className="icon ion-logo-instagram"></i>
-                            </a> */}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
 
-        <div className={classNames(styles.footerSecondary)}>
-          <div className="row">
-            <div className="col-md col-12">{notePrimaryElement}</div>
-            <div className="col-md-auto">{noteSecondaryElement}</div>
+const FooterA = ({ footerMenu, socialMenu, noteText }: Props) => {
+  return (
+    <footer className="footer footer-page mb-4">
+      <div className="footer-container container-fluid">
+        <div className="row align-items-center">
+          <div className="col-auto me-auto">
+            <p className="mb-0">2021 Allseason Co. All rights reserved.</p>
+          </div>
+          <div className="col-auto">
+            <div className="nav-group">
+              <NavA menuItems={footerMenu} />
+              <NavSocialA menuItems={socialMenu} />
+              {/* <ul className="nav nav-social">
+                <li className="nav-item">
+                  <a className="btn btn-icon-a icon-only" href="#">
+                    <span className="icon icon-lg">
+                      <i className="ion ion-logo-instagram"></i>
+                    </span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="btn btn-icon-a icon-only" href="#">
+                    <span className="icon icon-lg">
+                      <i className="ion ion-logo-pinterest"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul> */}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

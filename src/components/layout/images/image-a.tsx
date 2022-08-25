@@ -5,11 +5,24 @@ import styles from "./image-a.module.scss";
 type Props = {
   src: string;
   alt?: string;
-  shape?: "square" | "rounded-small" | "rounded-medium" | "rounded-large" | "circle";
-  scaleOnHover?: boolean
+  shape?:
+    | "square"
+    | "rounded-small"
+    | "rounded-medium"
+    | "rounded-large"
+    | "circle";
+  scaleOnHover?: boolean;
+  scaleOnHoverSpeed?: "slow" | "medium" | "fast";
+  scaleOnHoverScale?: "small" | "medium" | "large";
 };
-const ImageA = ({ src, alt, shape = "square", scaleOnHover = true }: Props) => {
-  
+const ImageA = ({
+  src,
+  alt,
+  shape = "square",
+  scaleOnHover = true,
+  scaleOnHoverSpeed = "fast",
+  scaleOnHoverScale = "small",
+}: Props) => {
   let _shape = styles.shapeSquare;
   switch (shape) {
     case "square":
@@ -33,12 +46,14 @@ const ImageA = ({ src, alt, shape = "square", scaleOnHover = true }: Props) => {
     <figure className={classNames(styles.imageA)}>
       {/* <div className={"fig-layer rounded overflow-hidden"}> */}
       <div className={classNames(styles.imageLayer, _shape)}>
-        <div className={classNames(scaleOnHover && styles.scaleOnHover)}>
-          <img
-            className={classNames(styles.fitCover)}
-            src={src}
-            alt={alt}
-          />
+        <div
+          className={classNames(
+            scaleOnHover && styles.scaleOnHover,
+            styles[`speed-${scaleOnHoverSpeed}`],
+            styles[`scale-${scaleOnHoverScale}`]
+          )}
+        >
+          <img className={classNames(styles.fitCover)} src={src} alt={alt} />
         </div>
       </div>
     </figure>

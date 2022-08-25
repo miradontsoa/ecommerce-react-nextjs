@@ -29,8 +29,8 @@ const ButtonInlineA = ({
   return (
     <span className={classNames(styles.btnInlineA, className, _iconPosition)}>
       {children}
-      <span className={classNames(styles.text)}>{text}</span>
-      <span className={classNames(styles.icon)}>{iconElement}</span>
+      {text && <span className={classNames(styles.text)}>{text}</span>}
+      {iconElement && <span className={classNames(styles.icon)}>{iconElement}</span>}
     </span>
   );
 };

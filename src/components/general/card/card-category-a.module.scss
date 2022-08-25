@@ -1,0 +1,43 @@
+.cardCategoryA{
+    display: flex;
+    color: currentColor;
+    flex-direction: column;
+}
+
+.cardImage{
+    border-radius: 0;
+    overflow: hidden;
+    transition: 0.3s;
+}
+.cardBody{
+    padding: 0;
+    padding-top: 2rem;
+    text-align: center;
+    
+    &.center{
+        text-align: center;
+    }
+    &.left{
+        text-align: left;
+    }
+    &.right{
+        text-align: right;
+    }
+}
+.line{
+    margin-bottom: 0.5rem;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.title{
+    font-size: 2rem;
+}
+
+/* on hover */
+.cardCategoryA:hover{
+    .cardImage:hover{
+        box-shadow: 0px 8px 24px -4px rgb(0 0 0 / 20%);
+    }
+}
