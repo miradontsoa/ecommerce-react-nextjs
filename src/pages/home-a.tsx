@@ -1,29 +1,29 @@
-import SearchbarA from "@components/form/searchbar-a";
-import ButtonInlineA from "@components/general/button/button-inline-a";
-import ButtonMenuA from "@components/general/button/button-menu-a";
-import ButtonSolidA from "@components/general/button/button-solid-a";
-import IconE from "@components/general/icon/icon-e";
-import IconA from "@components/general/icon/icon-a";
-import NavbarA from "@components/navigation/navbar/navbar-a";
-import NavtabsA from "@components/navigation/navtabs/navtabs-a";
-import HeroA from "@components/sections/hero-a";
-import SectionA from "@components/sections/section-a";
-import { MenuItem } from "@typescript/types";
+import SearchbarA from "components/form/searchbar-a";
+import ButtonInlineA from "components/general/button/button-inline-a";
+import ButtonMenuA from "components/general/button/button-menu-a";
+import ButtonSolidA from "components/general/button/button-solid-a";
+import IconE from "components/general/icon/icon-e";
+import IconA from "components/general/icon/icon-a";
+import NavbarA from "components/navigation/navbar/navbar-a";
+import NavtabsA from "components/navigation/navtabs/navtabs-a";
+import HeroA from "components/sections/layout/hero-a";
+import SectionA from "components/sections/layout/section-a";
+import { MenuItem } from "types/types";
 import classNames from "classnames";
 import { NextPage } from "next";
 import Head from "next/head";
 import React, { useState } from "react";
 import styles from "./home-a.module.scss";
-import IconC from "@components/general/icon/icon-c";
+import IconC from "components/general/icon/icon-c";
 import Link from "next/link";
-import CardProductA from "@components/general/card/card-product-a";
-import ImageA from "@components/layout/images/image-a";
-import CardProductB from "@components/general/card/card-product-b";
-import CardCategoryA from "@components/general/card/card-category-a";
-import CardCategoryB from "@components/general/card/card-category-b";
-import ImageB from "@components/layout/images/image-b";
-import FooterB from "@components/footer/footer-b";
-import FooterA from "@components/footer/footer-a";
+import CardProductA from "components/general/card/card-product-a";
+import ImageA from "components/media-text/images/image-a";
+import CardProductB from "components/general/card/card-product-b";
+import CardCategoryA from "components/general/card/card-category-a";
+import CardCategoryB from "components/general/card/card-category-b";
+import ImageB from "components/media-text/images/image-b";
+import FooterB from "components/footer/footer-b";
+import FooterA from "components/footer/footer-a";
 
 const HomeA: NextPage = () => {
   const [active, setActive] = useState("About");
@@ -319,9 +319,9 @@ const HomeA: NextPage = () => {
                                         d="M455.189,396.5l18,18-18,18m15.5-18h-36.5"
                                         fill="none"
                                         stroke="#000"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="6"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="6"
                                       />
                                     </g>
                                   </g>

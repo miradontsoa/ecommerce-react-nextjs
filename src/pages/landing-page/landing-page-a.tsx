@@ -6,24 +6,24 @@ import Head from "next/head";
 import classNames from "classnames";
 import styles from "./landing-page-a.module.scss";
 
-import { MenuItem } from "@typescript/types";
-import NavbarA from "@components/navigation/navbar/navbar-a";
-import ButtonSolidA from "@components/general/button/button-solid-a";
-import ButtonMenuA from "@components/general/button/button-menu-a";
-import HeroA from "@components/sections/hero-a";
-import ImageA from "@components/layout/images/image-a";
-import SectionA from "@components/sections/section-a";
-import ImageB from "@components/layout/images/image-b";
-import FeatureA from "@components/layout/features/feature-a";
-import IconE from "@components/general/icon/icon-e";
-import FeatureB from "@components/layout/features/feature-b";
-import IconB from "@components/general/icon/icon-b";
-import PricingA from "@components/layout/pricings/pricing-a";
-import ReviewA from "@components/layout/reviews/review-a";
-import NewsletterFormA from "@components/form/newsletter-form-a";
-import CardA from "@components/general/card/card-a";
-import SignupFormA from "@components/form/signup-form-a";
-import FooterB from "@components/footer/footer-b";
+import { MenuItem } from "types/types";
+import NavbarA from "components/navigation/navbar/navbar-a";
+import ButtonSolidA from "components/general/button/button-solid-a";
+import ButtonMenuA from "components/general/button/button-menu-a";
+import HeroA from "components/sections/hero-a";
+import ImageA from "components/media-text/images/image-a";
+import SectionA from "components/sections/section-a";
+import ImageB from "components/media-text/images/image-b";
+import FeatureA from "components/media-text/features/feature-a";
+import IconE from "components/general/icon/icon-e";
+import FeatureB from "components/media-text/features/feature-b";
+import IconB from "components/general/icon/icon-b";
+import PricingA from "components/media-text/pricings/pricing-a";
+import ReviewA from "components/media-text/reviews/review-a";
+import NewsletterFormA from "components/form/newsletter-form-a";
+import CardA from "components/general/card/card-a";
+import SignupFormA from "components/form/signup-form-a";
+import FooterB from "components/footer/footer-b";
 
 const LandingPageA: NextPage = () => {
   const [active, setActive] = useState("About");
@@ -884,16 +884,16 @@ const LandingPageA: NextPage = () => {
       <FooterB
         navingationLinks={[
           {
-            name: "Products",
-            url: "#",
+            title: "Products",
+            href: "#",
           },
           {
-            name: "Terms and Conditions",
-            url: "#",
+            title: "Terms and Conditions",
+            href: "#",
           },
           {
-            name: "Contact",
-            url: "#contact",
+            title: "Contact",
+            href: "#contact",
           },
           // {
           //   name: "My web",
@@ -906,12 +906,12 @@ const LandingPageA: NextPage = () => {
           //   url: "#",
           // },
           {
-            name: "Twitter",
-            url: "#",
+            title: "Twitter",
+            href: "#",
           },
           {
-            name: "Instagram",
-            url: "#contact",
+            title: "Instagram",
+            href: "#contact",
           } 
         ]}
         socialInviteText={"Follow me on"}

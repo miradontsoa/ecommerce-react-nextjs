@@ -1,3 +1,4 @@
+import { MenuItem } from "types/types";
 import classNames from "classnames";
 import React from "react";
 import styles from "./footer-b.module.css";
@@ -6,15 +7,8 @@ type Props = {
   notePrimaryElement?: React.ReactElement;
   noteSecondaryElement?: React.ReactElement;
   socialInviteText?: string;
-  navingationLinks?: {
-    name: string;
-    url: string;
-  }[];
-  socialLinks?: {
-    name: string;
-    url: string;
-    icon?: React.ReactSVGElement;
-  }[];
+  navingationLinks?: MenuItem[];
+  socialLinks?: MenuItem[];
 };
 const FooterB = ({
   navingationLinks,
@@ -33,9 +27,9 @@ const FooterB = ({
                 <ul className={classNames(styles.navFooter)}>
                   {navingationLinks.map((navigationLink) => {
                     return (
-                      <li key={navigationLink.name} className={classNames(styles.navItem)}>
-                        <a className={classNames(styles.navLink)} href={navigationLink.url}>
-                          {navigationLink.name}
+                      <li key={navigationLink.title} className={classNames(styles.navItem)}>
+                        <a className={classNames(styles.navLink)} href={navigationLink.href}>
+                          {navigationLink.title}
                         </a>
                       </li>
                     );
@@ -50,9 +44,9 @@ const FooterB = ({
                   <ul className={classNames(styles.navFooter, styles.navSocial)}>
                     {socialLinks.map((socialLink) => {
                       return (
-                        <li key={socialLink.name} className={classNames(styles.navItem)}>
-                          <a className={classNames(styles.navSocialIcon)} href={socialLink.url}>
-                            {socialLink.name}
+                        <li key={socialLink.title} className={classNames(styles.navItem)}>
+                          <a className={classNames(styles.navSocialIcon)} href={socialLink.href}>
+                            {socialLink.title}
                           </a>
                           {/* <a className="icon-md" href="">
                             <i className="icon ion-logo-instagram"></i>

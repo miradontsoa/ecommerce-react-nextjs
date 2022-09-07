@@ -1,4 +1,4 @@
-import { Color } from "@typescript/types";
+import { Color } from "types/types";
 import classNames from "classnames";
 import styles from "./review-a.module.css";
 type Props = {

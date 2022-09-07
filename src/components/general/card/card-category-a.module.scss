@@ -6,6 +6,11 @@
 
 .cardImage{
     border-radius: 0;
+    // overflow: hidden;
+    transition: 0.3s;
+}
+.cardImageContent{
+    border-radius: 16px;
     overflow: hidden;
     transition: 0.3s;
 }
@@ -36,8 +41,16 @@
 }
 
 /* on hover */
-.cardCategoryA:hover{
+/* .cardCategoryA:hover{
     .cardImage:hover{
         box-shadow: 0px 8px 24px -4px rgb(0 0 0 / 20%);
+    }
+} */
+.cardCategoryA:hover{
+    .cardImage{
+        .cardImageContent{
+            box-shadow: 0px 8px 16px -4px rgb(0 0 0 / 20%);
+            opacity: 0.75;
+        }
     }
 }

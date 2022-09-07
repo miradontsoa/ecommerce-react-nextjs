@@ -12,8 +12,8 @@ const TagsA = ({
     <>
       {tags && (
         <ul className={styles.tags}>
-          {tags.map((tag) => {
-            return <li className={styles.tag}>{tag.title}</li>;
+          {tags.map((tag, index) => {
+            return <li className={styles.tag} key={index}>{tag.title}</li>;
           })}
         </ul>
       )}

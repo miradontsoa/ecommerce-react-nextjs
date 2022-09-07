@@ -22,7 +22,7 @@ const CardCategoryA = ({
 }: Props) => {
   return (
     <div className={classNames(className, styles.cardCategoryA)}>
-      <div className={styles.cardImage}>{imageElement}</div>
+      <div className={styles.cardImage}><div className={styles.cardImageContent}>{imageElement}</div></div>
       <div className={classNames(styles.cardBody, styles[textAlign])}>
         {(title || titleElement) && (
           <div className={styles.line}>

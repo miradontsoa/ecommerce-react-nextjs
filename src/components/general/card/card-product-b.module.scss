@@ -8,12 +8,10 @@
 }
 
 .cardImage {
-    border-radius: 0;
+    border-radius: 0px;
     overflow: hidden;
     transition: 0.3s;
     width: 100%;
-
-
     @media screen and (min-width: 992px) {
         padding-top: 0;
         flex: 0 0 auto;
@@ -22,6 +20,10 @@
         padding-right: calc(var(--gutter-x)/ 2);
     }
 
+}
+.cardImageContent{
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .cardBody {
@@ -36,6 +38,31 @@
         width: 50%;
         padding-left: calc(var(--gutter-x)/ 2);
         padding-right: calc(var(--gutter-x)/ 2);
+    }
+}
+
+.image-left{
+    .cardImage{
+        @media screen and (min-width: 992px) {
+            order: 1;
+        }
+    }
+    .cardBody{
+        @media screen and (min-width: 992px) {
+            order: 2;
+        }
+    }
+}
+.image-right{
+    .cardImage{
+        @media screen and (min-width: 992px) {
+            order: 2;
+        }
+    }
+    .cardBody{
+        @media screen and (min-width: 992px) {
+            order: 1;
+        }
     }
 }
 .cardBodyContent{

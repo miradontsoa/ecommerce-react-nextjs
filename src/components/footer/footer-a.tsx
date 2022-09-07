@@ -1,41 +1,34 @@
-import NavA from "@components/navigation/nav/nav-a";
-import NavSocialA from "@components/navigation/nav/nav-social-a";
-import { MenuItem } from "@typescript/types";
+import NavA from "components/navigation/nav/nav-a";
+import NavSocialA from "components/navigation/nav/nav-social-a";
+import { MenuItem } from "types/types";
+import classNames from "classnames";
+import styles from "./footer-a.module.scss";
 
 type Props = {
+  className?: String;
   footerMenu?: MenuItem[];
   socialMenu?: MenuItem[];
-  noteText?: string;
+  noteElement?: string | React.ReactElement;
 };
 
-const FooterA = ({ footerMenu, socialMenu, noteText }: Props) => {
+const FooterA = ({ className, footerMenu, socialMenu, noteElement }: Props) => {
   return (
-    <footer className="footer footer-page mb-4">
-      <div className="footer-container container-fluid">
-        <div className="row align-items-center">
-          <div className="col-auto me-auto">
-            <p className="mb-0">2021 Allseason Co. All rights reserved.</p>
-          </div>
-          <div className="col-auto">
-            <div className="nav-group">
+    <footer className={classNames(className, styles.footerA)}>
+      <div className={classNames(styles.footerContainer)}>
+        <div className={classNames(styles.footerLine, "mb-3", "pb-3")}>
+          <div className="row">
+            <div className="col-12">
               <NavA menuItems={footerMenu} />
-              <NavSocialA menuItems={socialMenu} />
-              {/* <ul className="nav nav-social">
-                <li className="nav-item">
-                  <a className="btn btn-icon-a icon-only" href="#">
-                    <span className="icon icon-lg">
-                      <i className="ion ion-logo-instagram"></i>
-                    </span>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="btn btn-icon-a icon-only" href="#">
-                    <span className="icon icon-lg">
-                      <i className="ion ion-logo-pinterest"></i>
-                    </span>
-                  </a>
-                </li>
-              </ul> */}
+            </div>
+          </div>
+        </div>
+        <div className={classNames(styles.footerLine)}>
+          <div className="row">
+            <div className="col-auto me-auto">{noteElement}</div>
+            <div className="col-auto">
+              <div className="nav-group">
+                <NavSocialA menuItems={socialMenu} />
+              </div>
             </div>
           </div>
         </div>

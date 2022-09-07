@@ -3,17 +3,19 @@
     list-style: none;
     margin-bottom: 0;
     line-height: 1.5;
-
-    >li {
+    padding-left: 0;
+    > li {
         margin-left: 1rem;
         margin-right: 1rem;
 
         &:first-child {
             margin-left: 0;
+            padding-left: 0;
         }
 
         &:last-child {
             margin-right: 0;
+            padding-right: 0;
         }
 
         >.navLink{
@@ -95,7 +97,7 @@
     border-radius: 0.5rem;
     padding: 0;
     border: 1px solid rgba(127, 127, 127, 0.2);
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.9);
     // display: none;
     visibility: hidden;
     opacity: 0;

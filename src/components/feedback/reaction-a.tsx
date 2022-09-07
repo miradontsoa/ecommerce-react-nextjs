@@ -1,4 +1,4 @@
-import IconA from "../icon/icon-a";
+import IconA from "../general/icon/icon-a";
 
 const ReactionA = ({
   like,
@@ -51,9 +51,9 @@ const ReactionA = ({
                     d="M204.907,1209.31c-8.115,0-12.115,8-12.115,8s-4-8-12.115-8a12.083,12.083,0,0,0-11.885,12.1c-.138,13.666,10.841,23.385,22.875,31.552a2,2,0,0,0,2.25,0c12.032-8.167,23.011-17.886,22.875-31.552a12.083,12.083,0,0,0-11.885-12.1Z"
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="4"
                   />
                 </g>
               </g>

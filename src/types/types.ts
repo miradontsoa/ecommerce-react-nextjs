@@ -6,6 +6,7 @@ export type MenuItem = {
     active?: boolean;
     color?: string;
     element?: React.ReactElement;
+    icon?: React.ReactSVGElement | React.ReactElement;
     size?: "small" | "medium" | "large";
     onClick?: () => void;
     subMenuItems?: MenuItem[];

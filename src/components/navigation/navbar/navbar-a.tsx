@@ -1,9 +1,7 @@
-import ButtonSolidA from "@components/general/button/button-solid-a";
-import Link from "next/link";
 import React from "react";
 import classNames from "classnames";
 import styles from "./navbar-a.module.scss";
-import { MenuItem } from "@typescript/types";
+import { MenuItem } from "types/types";
 import NavA from "../nav/nav-a";
 
 type Props = {
@@ -19,7 +17,7 @@ type Props = {
   rightNavMenu?: MenuItem[];
   rightNavElement?: React.ReactElement;
   isMenuVisible?: boolean;
-  onMenuToggler?: (isMenuVsible: boolean) => void;
+  onMenuToggler?: (isMenuVisible: boolean) => void;
 };
 /**
  * Navigation Bar at top

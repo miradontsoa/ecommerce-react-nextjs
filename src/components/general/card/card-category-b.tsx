@@ -25,13 +25,17 @@ const CardCategoryB = ({
   verticalAlign = "center",
 }: Props) => {
   return (
-    <div
-      className={classNames(className, styles.cardCategoryB)}
-      style={{
-        backgroundColor: backgroundColor,
-      }}
-    >
-      <div className={styles.cardImage}>{imageElement}</div>
+    <div className={classNames(className, styles.cardCategoryB)}>
+      <div className={styles.cardImage}>
+        <div
+          className={styles.cardImageContent}
+          style={{
+            backgroundColor: backgroundColor,
+          }}
+        >
+          {imageElement}
+        </div>
+      </div>
       <div
         className={classNames(
           styles.cardBody,

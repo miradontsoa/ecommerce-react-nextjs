@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 import styles from "./section-a.module.scss";
 import classNames from "classnames";
 
@@ -12,6 +12,8 @@ type Props = {
   footerContainerWidth?: "full" | "content";
   marginTop?: "large" | "medium" | "small" | "none";
   marginBottom?: "large" | "medium" | "small" | "none";
+  borderBottom?: "medium" | "none";
+  borderTop?: "medium" | "none";
 };
 const SectionA = ({
   backgroundImage,
@@ -23,6 +25,8 @@ const SectionA = ({
   footerContainerWidth,
   marginTop,
   marginBottom,
+  borderTop = "none",
+  borderBottom = "none",
 }: Props) => {
   let _containerWidth = styles.content;
   switch (containerWidth) {
@@ -97,6 +101,8 @@ const SectionA = ({
         className={classNames(
           styles.container,
           "container-fluid",
+          styles[`borderTop-${borderTop}`],
+          styles[`borderBottom-${borderBottom}`],
           _marginTop,
           _marginBottom
         )}

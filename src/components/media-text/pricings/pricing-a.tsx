@@ -1,7 +1,7 @@
-import { Color } from "@typescript/types";
+import { Color } from "types/types";
 import classNames from "classnames";
 import React from "react";
-import styles from "./pricing-b.module.css";
+import styles from "./pricing-a.module.css";
 
 type Props = {
   className?: string;
@@ -9,61 +9,36 @@ type Props = {
   titleElement: React.ReactElement;
   contentElement?: React.ReactElement;
   footerElement?: React.ReactElement;
-  elevation?: "none" | "small" | "large" | "medium";
-  shape?: "square" | "rounded-small" | "rounded-medium" | "rounded-large";
+  color?: Color;
   featureList?: {
     title?: string;
     description?: string;
     enabled?: boolean;
   }[];
 };
-const PricingB = ({
+const PricingA = ({
   className,
-  elevation = "small",
-  shape = "rounded-medium",
   titleElement,
   priceElement,
   contentElement,
   footerElement,
   featureList,
+  color = "primary",
 }: Props) => {
-  let _elevation = "";
-  
-  let _shape = "";
-  switch (shape) {
-    case "rounded-small":
-      _shape = styles.rdSm;
-      break;
-    case "rounded-medium":
-      _shape = styles.rdMd;
-      break;
-    case "rounded-large":
-      _shape = styles.rdLg;
-      break;
-  }
-  switch (elevation) {
-    case "small":
-      _elevation = styles.elevSm;
-      break;
-    case "medium":
-      _elevation = styles.elevMd;
-      break;
-    case "large":
-      _elevation = styles.elevLg;
-      break;
-  }
   return (
     <div
       className={classNames(
-        styles.pricingB,
-        _shape,
-        _elevation,
+        styles.pricingA,
+        styles.moveHeader,
+        styles[color],
         className
       )}
     >
+      <div className={styles.header}>
+        <div className={styles.badge}>{titleElement}</div>
+      </div>
       <div className={styles.body}>
-        {titleElement && <div className={styles.title}>{titleElement}</div>}
-        {priceElement && <div className={styles.price}>{priceElement}</div>}
+        {priceElement && <div className={styles.bodyPrice}>{priceElement}</div>}
         {contentElement && (
           <div className={styles.bodyContent}>{contentElement}</div>
         )}
@@ -132,4 +107,4 @@ const PricingB = ({
     </div>
   );
 };
-export default PricingB;
+export default PricingA;

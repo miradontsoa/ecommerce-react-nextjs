@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 import styles from "./newsletter-form-a.module.css";
-import InputA from "@components/general/input/input-a";
-import ButtonSolidA from "@components/general/button/button-solid-a";
+import InputA from "components/general/input/input-a";
+import ButtonSolidA from "components/general/button/button-solid-a";
 
 type Props = {
   className?: string;

@@ -1,0 +1,26 @@
+.footerA{
+    display: block;
+    padding: 0;
+    margin-top: 0px;
+    position: relative;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 10;
+    margin-bottom: 1.5rem;
+}
+.footerContainer{
+    padding: 0.5rem 0.75rem;
+    
+    padding-left: var(--ck-page-margin-x);
+    padding-right: var(--ck-page-margin-x);
+    @media screen and (min-width: 768px){
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+.footerLine{
+    border-bottom: 1px solid rgba(128,128,128,0.5);
+    &:last-child{
+        border-bottom: none;
+    }
+}

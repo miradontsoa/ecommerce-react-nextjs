@@ -12,7 +12,7 @@
 }
 
 .cardImage {
-    border-radius: 0;
+    border-radius: 16px;
     overflow: hidden;
     transition: 0.3s;
     width: 100%;
@@ -81,6 +81,8 @@
 /* on hover */
 .cardProductA:hover{
     .cardImage:hover{
-        box-shadow: 0px 8px 24px -4px rgb(0 0 0 / 20%);
+        // filter: drop-shadow(0px 8px 1px rgba(0,0,0,0.1));
+        // box-shadow: 0px 8px 24px -4px rgb(0 0 0 / 20%);
+        box-shadow: 0px 8px 16px -4px rgb(0 0 0 / 20%);
     }
 }

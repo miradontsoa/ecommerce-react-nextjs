@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import styles from "./card-product-b.module.scss";
 import ButtonInlineA from "../button/button-inline-a";
-import ReactionA from "../rating-reaction/reaction-a";
+import ReactionA from "../../feedback/reaction-a";
 import ColorCategoriesA from "../tags-categories/color-categories-a";
 import TagsA from "../tags-categories/tags-a";
 
@@ -25,6 +25,7 @@ type Props = {
   ratingElement?: React.ReactElement;
   quantityElement?: React.ReactElement;
   imageElement?: React.ReactElement;
+  imagePosition?: "left" | "right";
 };
 
 const CardProductB = ({
@@ -35,6 +36,7 @@ const CardProductB = ({
   description,
   tags,
   imageElement,
+  imagePosition="left",
   colors,
   quantityElement,
   titleElement,
@@ -43,8 +45,8 @@ const CardProductB = ({
   ratingElement,
 }: Props) => {
   return (
-    <div className={classNames(className, styles.cardProductB)}>
-      <div className={styles.cardImage}>{imageElement}</div>
+    <div className={classNames(className, styles.cardProductB, styles[`image-${imagePosition}`])}>
+      <div className={styles.cardImage}><div className={styles.cardImageContent}>{imageElement}</div></div>
       <div className={styles.cardBody}>
         <div className={styles.cardBodyContent}>
           {tags && (

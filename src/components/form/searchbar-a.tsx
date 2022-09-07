@@ -1,5 +1,5 @@
-import IconB from "@components/general/icon/icon-b";
-import InputA from "@components/general/input/input-a";
+import IconB from "components/general/icon/icon-b";
+import InputA from "components/general/input/input-a";
 import classNames from "classnames";
 import React from "react";
 import styles from "./searchbar-a.module.scss";

@@ -1,4 +1,4 @@
-import { MenuItem } from "@typescript/types";
+import { MenuItem } from "types/types";
 import classNames from "classnames";
 import styles from "./nav-social-a.module.scss";
 type Props = {

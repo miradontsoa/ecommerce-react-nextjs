@@ -105,3 +105,28 @@
 .footer.content {
     max-width: var(--ck-section-content-width);
 }
+
+// Border
+.borderTop-medium{
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: var(--ck-page-margin-x);
+        right: var(--ck-page-margin-x);
+        border-top: 2px solid var(--ck-dark);
+    }
+}
+.borderBottom-medium{
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: auto;
+        bottom: -1px;
+        left: var(--ck-page-margin-x);
+        right: var(--ck-page-margin-x);
+        border-bottom: 2px solid var(--ck-dark);
+    }
+}

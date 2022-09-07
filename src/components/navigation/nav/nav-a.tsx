@@ -1,4 +1,4 @@
-import { MenuItem } from "@typescript/types";
+import { MenuItem } from "types/types";
 import classNames from "classnames";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./nav-a.module.scss";

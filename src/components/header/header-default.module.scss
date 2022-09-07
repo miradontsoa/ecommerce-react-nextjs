@@ -1,0 +1,15 @@
+.navbarTop {
+    display: block;
+    padding: 0;
+    margin-top: 0px;
+    margin-top: var(--ck-page-margin-t);
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    background-color: rgba(var(--ck-white-rgb), 0.75);
+    transition: 0.3s;
+}
