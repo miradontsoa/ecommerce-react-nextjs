@@ -1,36 +1,28 @@
 // Book detail page
 
-import React, { useEffect } from "react";
-import BannerCart from "components/banner/banner-featured";
-import { BookstoreContext } from "hooks/bookstore-context";
-import { Book } from "interfaces";
-import Link from "next/link";
-import BannerBook from "../../components/banner/banner-book";
-import { useRouter } from "next/router";
-import { getAllBooksPaths, getBook } from "../../utils";
+import LayoutDefault from "components/layout/layout-default";
 import { GetStaticPaths, GetStaticProps } from "next";
+import React, { useEffect } from "react";
+import { Product } from "types/product";
+import {
+  getAllProductsPaths,
+  getProduct,
+} from "utils/productUtils";
 
-const BookPage = ({ book }: { book: Book }) => {
+const ProductPage = ({ product }: { product: Product }) => {
   return (
-    <div>
-      <BannerBook book={book} />
-      <section className="section-a">
-        <div className="container-xxl">
-          <h2 className="section-title">Details</h2>
-          <div className="section-desc">
-            {book.synopsis.map((synopsisText, index) => (
-              <p key={index}>{synopsisText}</p>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
+    <LayoutDefault>
+      <div>
+        <h2>{product?.name}</h2>
+        <p>{product?.description}</p>
+      </div>
+    </LayoutDefault>
   );
 };
-export default BookPage;
+export default ProductPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await getAllBooksPaths();
+  const paths = await getAllProductsPaths();
   return {
     paths,
     fallback: false,
@@ -38,11 +30,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const book = await getBook(params?.productId as string);
+  const product = await getProduct(params?.productId as string);
 
   return {
     props: {
-      book,
+      product: product,
     },
   };
 };

@@ -23,11 +23,6 @@ import LayoutDefault from "components/layout/layout-default";
 const HomePage: NextPage = () => {
   const [active, setActive] = useState("About");
   const [subscriptionEmail, setSubscriptionEmail] = useState("");
-  
-
-  
-
-  
 
   return (
     <LayoutDefault className={classNames(styles.homeA)}>
