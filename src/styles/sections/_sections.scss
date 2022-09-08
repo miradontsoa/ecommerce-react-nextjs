@@ -1,0 +1,12 @@
+.section{
+    position: relative;
+    .section-body{
+        position: relative;
+    }
+}
+
+@import 'section-bg';
+@import 'hero-a';
+@import 'hero-b';
+@import 'hero-text';
+@import 'section-page';

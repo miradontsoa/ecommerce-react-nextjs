@@ -1,0 +1,53 @@
+// fullscreen navigation menu
+.nav-fullscreen{
+    @media screen and (min-width: $breakpoint-lg){
+        position: fixed;
+        top: 0;
+        left: 0;
+        // height: 100vh;
+        min-height: 100vh;
+        // width: 100vw;
+        right: 0;
+        // bottom: 0;
+        background: rgba(var(--light-rgb), 0.75);
+        z-index: -1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column !important;
+        text-align: center;
+        backdrop-filter: blur(5px);
+        z-index: 1;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s;
+        transform: scale(0.95);
+        .nav-item{
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            font-size: 3.5rem;
+            font-weight: bold;
+            transition: 0.3s;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+}
+.navbar-collapse.show .nav-fullscreen{
+    @media screen and (min-width: $breakpoint-lg){
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+}
+.navbar-light{
+    .nav-fullscreen{
+        @media screen and (min-width: $breakpoint-lg){
+            background: rgba($white, 0.8);
+            color: var(--fg-color);
+        }
+    }
+}

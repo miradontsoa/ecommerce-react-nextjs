@@ -1,0 +1,101 @@
+:root{
+    /* Colors*/
+    /* Theme colors */
+    --primary: #{$primary};
+    --bs-primary: #{$primary};
+    
+    --secondary: #{$secondary};
+    --bs-secondary: #{$secondary};
+    
+    --white: #ffffff;
+    --white-rgb: 255, 255, 255;
+    
+    --light-white: #F9F9F9;
+    --light: #FFFFFF;
+    --light-rgb: 255, 255, 255;
+    --dark: #394149;
+    --dark-rgb: 57, 65, 73;
+
+    --gray: #d0d9e2;
+
+    /* Page colors */
+    --bg-color: var(--white);
+    --bg-color-rgb: var(--white-rgb);
+    --fg-color: var(--dark);
+    --fg-color-rgb: var(--dark-rgb);
+    
+
+    /* Spacings */
+    /* page margins*/
+    --page-margin-x-md: #{$page-margin-x-md};
+    --page-margin-x-lg: #{$page-margin-x-lg};
+    
+    --page-margin-t-md: #{$page-margin-t-md};
+    --page-margin-t-lg: #{$page-margin-t-lg};
+
+    --page-margin-b-md: #{$page-margin-b-md};
+    --page-margin-b-lg: #{$page-margin-b-lg};
+
+    /* sections margins*/
+    --section-margin-y-sm: #{$section-margin-y-sm};
+    --section-margin-y-md: #{$section-margin-y-md};
+    --section-margin-y-lg: #{$section-margin-y-lg};
+
+
+    /* font family */
+    --font-sans-serif: #{$font-sans-serif};
+}
+
+:root {
+    /* Colors */
+    --ck-primary: #413dff;
+    --ck-primary-rgb: 65, 61, 255;
+    --ck-primary-light: #f6f6ff;
+    --ck-secondary: #b49597;
+    --ck-secondary-rgb: 180, 149, 151;
+    --ck-secondary-light: #fdf7f8;
+
+    --ck-dark: #353535;
+    --ck-dark-rgb: 53, 53, 53;
+    --ck-light: #eeeeee;
+    --ck-light-rgb: 238, 238, 238;
+    --ck-white: #ffffff;
+    --ck-white-rgb: 255,255,255;
+
+    --ck-bg-color: --ck-light;
+    --ck-fg-color: --ck-dark;
+    --ck-bg-rgb: --ck-light-rgb;
+    --ck-fg-rgb: --ck-dark-rgb;
+
+    /* Size */
+    --ck-page-margin-x: 16px;
+    --ck-page-margin-t: 64px;
+    --ck-section-margin-y: 64px;
+    @media screen and (min-width: 768px) {
+        /* Appearance on desktop */
+        --ck-page-margin-x: 4rem                       ;
+    }
+
+
+    /* font */
+    --ck-font-serif: 
+    "SF Pro Display",
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+    --bs-font-monospace: SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+}

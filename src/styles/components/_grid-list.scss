@@ -1,0 +1,23 @@
+.g-feature{
+    --bs-gutter-x: 3rem;
+    --bs-gutter-y: 3rem;
+    @media screen and (min-width: $breakpoint-lg){
+        --bs-gutter-x: 6rem;
+        --bs-gutter-y: 3rem;
+    }
+}
+.g-feature-2{
+    --bs-gutter-x: 3rem;
+    --bs-gutter-y: 3rem;
+    @media screen and (min-width: $breakpoint-lg){
+        --bs-gutter-x: 8rem;
+        --bs-gutter-y: 3rem;
+    }
+}
+
+.grid-2{
+    display: grid;
+    // grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}

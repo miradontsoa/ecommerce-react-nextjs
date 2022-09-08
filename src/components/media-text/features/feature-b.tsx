@@ -1,4 +1,4 @@
-import { Color } from "types/types";
+import { ThemeColor } from "types/types";
 import classNames from "classnames";
 import React from "react";
 import styles from "./feature-b.module.scss";
@@ -8,7 +8,7 @@ type Props = {
   imageElement?: React.ReactElement;
   titleElement?: React.ReactElement;
   contentElement?: React.ReactElement;
-  color?: Color;
+  color?: ThemeColor;
 };
 const FeatureB = ({ imageElement, titleElement, contentElement, className }: Props) => {
   return (

@@ -1,4 +1,4 @@
-import { Color } from "types/types";
+import { ThemeColor } from "types/types";
 import classNames from "classnames";
 import React from "react";
 import styles from "./pricing-a.module.css";
@@ -9,7 +9,7 @@ type Props = {
   titleElement: React.ReactElement;
   contentElement?: React.ReactElement;
   footerElement?: React.ReactElement;
-  color?: Color;
+  color?: ThemeColor;
   featureList?: {
     title?: string;
     description?: string;

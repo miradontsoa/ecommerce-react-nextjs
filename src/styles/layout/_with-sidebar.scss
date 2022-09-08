@@ -1,0 +1,42 @@
+.with-sidebar-layout{
+    display: grid;
+    // columns: ;
+    // grid-template-areas:
+    //     "sidebar content"
+    //     "sidebar footer";
+    grid-template-areas:
+        "sidebar content" ;
+    grid-template-columns: 240px 1fr;
+    // grid-template-columns: 1fr 4fr 1fr;
+    // grid-template-rows: auto 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    gap: 3rem;
+    padding: 0 1rem;
+    @media screen and (min-width : $breakpoint-md) {
+        padding: 0 var(--page-margin-x-md);
+    }
+
+    @media screen and (min-width : $breakpoint-lg) {
+        // padding: 8rem var(--page-margin-x-lg);
+        padding: 0 var(--page-margin-x-lg);
+    }
+    .sidebar-left{
+
+        .sidebar-nav{
+
+            position: sticky;
+            top: 5rem + 3rem;
+        }
+    }
+    
+    .page-content{
+        
+    }
+    .section-page{
+        .section-body{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

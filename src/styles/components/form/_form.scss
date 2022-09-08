@@ -1,0 +1,12 @@
+@import "form-control";
+@import "form-select";
+@import "form-check";
+@import "input-group";
+
+.fc-lg{
+    min-height: 48px;
+}
+.radio-group-inline{
+    display: flex;
+    gap: 0.5rem;
+}

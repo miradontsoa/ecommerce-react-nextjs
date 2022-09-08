@@ -1,0 +1,10 @@
+body{
+    font-family: var(--font-sans-serif);
+    color: var(--fg-color);
+    background-color: var(--bg-color);
+    line-height: 1.7;
+}
+
+main{
+    min-height: calc(66vh);
+}

@@ -1,0 +1,50 @@
+
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem 1.25rem;
+}
+
+.btn-lg {
+    font-size: 1.125rem;
+    min-height: 3.5rem;
+    // padding: 0.875em 1.25em;
+    padding: 0.75em 1.75em;
+}
+
+.btn-xl {
+    font-size: 1.125rem;
+    min-height: 3.5rem;
+    // padding: 0.875em 1.25em;
+    padding: 1.5em 1.75em;
+}
+
+.btn-full{
+    width: 100%;
+}
+.btn-group-a{
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    > .btn{
+        position: relative;
+        width: auto; 
+    }
+}
+
+@import 'btn-reset';
+@import 'btn-outline-a';
+@import 'btn-solid-a';
+@import 'btn-line-a';
+@import 'btn-line-b';
+@import 'btn-icon-a';
+
+
+
+.btn-light{
+    
+}

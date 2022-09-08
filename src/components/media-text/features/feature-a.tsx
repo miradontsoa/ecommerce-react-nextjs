@@ -1,4 +1,4 @@
-import { Color } from "types/types";
+import { ThemeColor } from "types/types";
 import classNames from "classnames";
 import React from "react";
 import styles from "./feature-a.module.scss";
@@ -7,7 +7,7 @@ type Props = {
   imageElement?: React.ReactElement;
   titleElement?: React.ReactElement;
   contentElement?: React.ReactElement;
-  color?: Color;
+  color?: ThemeColor;
   className?: string;
   elevation?: "none" | "small" | "large" | "medium";
   padding?: "none" | "small" | "large" | "medium";

@@ -1,11 +1,11 @@
-import { Color } from "types/types";
+import { ThemeColor } from "types/types";
 import classNames from "classnames";
 import styles from "./review-a.module.css";
 type Props = {
   imageElement?: React.ReactElement;
   authorElement?: React.ReactElement;
   contentElement: React.ReactElement;
-  color?: Color;
+  color?: ThemeColor;
 };
 
 const ReviewA = ({ imageElement, contentElement, authorElement }: Props) => {

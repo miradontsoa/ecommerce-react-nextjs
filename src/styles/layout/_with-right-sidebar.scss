@@ -1,0 +1,37 @@
+.with-right-sidebar-layout{
+    display: grid;
+    grid-template-areas:
+        "content sidebar" ;
+    // grid-template-columns:  1fr 240px;
+    grid-template-columns:  1fr 320px;
+    grid-template-rows: 1fr;
+    position: relative;
+    gap: 3rem;
+    padding: 0 1rem;
+    @media screen and (min-width : $breakpoint-md) {
+        padding: 0 var(--page-margin-x-md);
+    }
+
+    @media screen and (min-width : $breakpoint-lg) {
+        // padding: 8rem var(--page-margin-x-lg);
+        padding: 0 var(--page-margin-x-lg);
+    }
+    .sidebar{
+        grid-area: sidebar;
+        .sidebar-nav{
+
+            position: sticky;
+            top: 5rem + 3rem;
+        }
+    }
+    .page-content{
+        grid-area: content;
+    }
+     
+    .section-page{
+        .section-body{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

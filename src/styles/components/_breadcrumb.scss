@@ -1,0 +1,28 @@
+.breadcrumb-a {
+    font-size: 1.125rem;
+    color: var(--fg-color);
+
+    a {
+        text-decoration: none;
+        color: currentColor;
+    }
+
+    .breadcrumb-item+.breadcrumb-item::before {
+        --bc-icon-bd-width: 2px;
+        --bc-icon-width: 0.625em;
+        display: inline-block;
+        float: left;
+        padding: 0;
+        margin-right: 0.75rem;
+        color: var(--fg-color);
+        content: "";
+
+        width: var(--bc-icon-width);
+        height: var(--bc-icon-width);
+        border-right: var(--bc-icon-bd-width) solid currentColor;
+        border-bottom: var(--bc-icon-bd-width) solid currentColor;
+
+        position: relative;
+        transform: translateY(calc( -1 * (var(--bc-icon-width) - 1.125em))) rotate(-45deg);
+    }
+}

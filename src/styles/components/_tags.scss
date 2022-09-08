@@ -1,0 +1,13 @@
+.tags {
+
+}
+.tag-item{
+    &::after{
+        content: ", ";
+    }
+    &:last-child {
+        &::after {
+             content:  none;
+        }
+    }
+}

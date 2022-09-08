@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import FooterDefault from "components/footer/footer-default";
 import HeaderDefault from "components/header/header-default";
+import { OrderContextProvider } from "contexts/order-context";
 import Head from "next/head";
 import React, { ReactNode, useState } from "react";
 import styles from "./layout-default.module.scss";
@@ -40,17 +41,23 @@ const LayoutDefault = ({ className, children, title, description }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div
-        className={classNames(className, styles.layout, pageScrolled && styles.scrolled)}
-      >
-        <HeaderDefault
-          isMenuVisible={isMenuVisible}
-          onMenuToggler={setIsMenuVisible}
-          scrolled={pageScrolled}
-        />
-        {children}
-        <FooterDefault />
-      </div>
+      <OrderContextProvider>
+        <div
+          className={classNames(
+            className,
+            styles.layout,
+            pageScrolled && styles.scrolled
+          )}
+        >
+          <HeaderDefault
+            isMenuVisible={isMenuVisible}
+            onMenuToggler={setIsMenuVisible}
+            scrolled={pageScrolled}
+          />
+          {children}
+          <FooterDefault />
+        </div>
+      </OrderContextProvider>
     </React.Fragment>
   );
 };

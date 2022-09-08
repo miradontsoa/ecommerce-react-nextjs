@@ -1,0 +1,16 @@
+.cart-list-columns{
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    grid-template-areas: "product quantity price";
+    .product{
+        grid-area: product;
+    }
+    .quantity{
+        grid-area: quantity;
+    }
+    .price{
+        grid-area: price;
+    }
+}

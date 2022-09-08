@@ -1,0 +1,105 @@
+.btn-line-a {
+	--btn-line-a-fg: var(--dark);
+	--btn-line-a-width: 2px;
+	color: var(--btn-line-a-fg);
+	border: none;
+	outline: none;
+	border-radius: 0px;
+	background: none;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	// padding: 0.75em 0;
+	padding: 0;
+	padding-bottom: 0.25em ;
+	position: relative;
+	transition: 0.3s;
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: "";
+		top: auto;
+		bottom: 0.25em;
+		border-bottom: var(--btn-line-a-width) solid currentColor;
+		transition: 0.3s;
+	}
+
+	&::before {
+		left: 0;
+		right: 100%;
+	}
+
+	&::after {
+		left: 00%;
+		right: 00%;
+		transition-delay: 0.2s;
+	}
+
+	.icon {
+		font-size: 1.5em;
+		line-height: 1;
+	}
+
+	.text~.icon {
+		margin-left: 0.5em;
+	}
+
+	.icon~.text {
+		margin-left: 0.5em;
+	}
+	&.btn-lg {
+		font-size: 1.125rem;
+		min-height: auto;
+		padding: 0;
+		padding-bottom: 0.25em ;
+	}
+
+	&.bdw-thin {
+		--btn-line-a-width: 1px;
+	}
+
+	&.bdw-medium {
+		--btn-line-a-width: 2px;
+	}
+
+	&.bdw-thick {
+		--btn-line-a-width: 4px;
+	}
+
+	&.active,
+	&:active,
+	&:focus,
+	&:hover {
+		color: var(--btn-line-a-fg);
+		background: none;
+		opacity: 0.7;
+		text-decoration: none;
+
+		// box-shadow: none;
+		&::before {
+			right: 0%;
+			transition-delay: 0.2s;
+		}
+
+		&::after {
+			left: 100%;
+			transition-delay: 00s;
+		}
+	}
+}
+
+
+// mixin
+@mixin btn-line-a($colorName: 'primary') {
+	--btn-line-a-fg: var(--#{$colorName});
+}
+
+// color variation
+@each $color,
+$value in $theme-colors {
+	.btn-line-a.btn-#{""+$color} {
+		@include btn-line-a(#{$color});
+	}
+}

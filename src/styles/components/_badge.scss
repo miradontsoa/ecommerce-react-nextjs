@@ -1,0 +1,12 @@
+.badge{
+    border-radius: 4px;
+    padding: 0.125em 0.5em;
+}
+.badge-info{
+    color: var(--bg-color);
+    background-color: var(--fg-color);
+}
+.badge-alert{
+    color: var(--bg-color);
+    background-color: rgb(248, 26, 45);
+}

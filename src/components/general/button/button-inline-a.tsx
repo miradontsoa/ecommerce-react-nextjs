@@ -6,6 +6,7 @@ type Props = {
   iconPosition?: "left" | "right";
   className?: string;
   text?: string;
+  badgeText?: string;
 };
 const ButtonInlineA = ({
   className,
@@ -13,6 +14,7 @@ const ButtonInlineA = ({
   text,
   iconElement,
   iconPosition,
+  badgeText,
 }: Props) => {
   let _iconPosition = styles.iconLeft;
   switch (iconPosition) {
@@ -31,6 +33,7 @@ const ButtonInlineA = ({
       {children}
       {text && <span className={classNames(styles.text)}>{text}</span>}
       {iconElement && <span className={classNames(styles.icon)}>{iconElement}</span>}
+      {badgeText && <span className={classNames(styles.badge,"badge badge-alert")}>{badgeText}</span>}
     </span>
   );
 };

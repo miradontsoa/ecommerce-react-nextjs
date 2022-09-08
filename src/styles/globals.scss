@@ -1,74 +1,18 @@
 @import "variables";
 
-:root {
-    /* Colors */
-    --ck-primary: #413dff;
-    --ck-primary-rgb: 65, 61, 255;
-    --ck-primary-light: #f6f6ff;
-    --ck-secondary: #b49597;
-    --ck-secondary-rgb: 180, 149, 151;
-    --ck-secondary-light: #fdf7f8;
+/* Root variables */
+@import 'root';
 
-    --ck-dark: #353535;
-    --ck-dark-rgb: 53, 53, 53;
-    --ck-light: #eeeeee;
-    --ck-light-rgb: 238, 238, 238;
-    --ck-white: #ffffff;
-    --ck-white-rgb: 255,255,255;
+/* Init and Reboot */
+@import 'init/html';
+@import 'init/page';
 
-    --ck-bg-color: --ck-light;
-    --ck-fg-color: --ck-dark;
-    --ck-bg-rgb: --ck-light-rgb;
-    --ck-fg-rgb: --ck-dark-rgb;
+@import 'layout/layout';
+/* Utilities */
+@import 'utilities/utilities';
 
-    /* Size */
-    --ck-page-margin-x: 16px;
-    --ck-page-margin-t: 64px;
-    --ck-section-margin-y: 64px;
-    @media screen and (min-width: 768px) {
-        /* Appearance on desktop */
-        --ck-page-margin-x: 4rem                       ;
-    }
+/* Components */
+@import 'components/components';
 
-
-    /* font */
-    --ck-font-serif: 
-    "SF Pro Display",
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-    --bs-font-monospace: SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
-    "Courier New",
-    monospace;
-}
-
-@import "reboot";
-@import "grid";
-@import "typography";
-@import "size";
-@import "utils";
-
-/* Reset */
-html,
-body {
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-family: var(--ck-font-serif);
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    line-height: 1.7;
-}
+/* Sections and Patterns */
+@import 'sections/sections';

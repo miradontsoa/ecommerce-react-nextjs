@@ -1,0 +1,99 @@
+.btn-line-b {
+	--btn-line-b-fg: var(--dark);
+	--btn-line-b-width: 1px;
+	color: var(--btn-line-b-fg);
+	border: none;
+	outline: none;
+	border-radius: 0px;
+	background: none;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	// padding: 0.75em 0;
+	padding: 0;
+	padding-bottom: 0.25em ;
+	// padding: 0.25em 0;
+	position: relative;
+	transition: 0.3s;
+	&::before,
+	&::after {
+		position: absolute;
+		content: "";
+		top: auto;
+		bottom: 0.25em;
+		border-bottom: var(--btn-line-b-width) solid currentColor;
+		transition: 0.3s;
+	}
+
+	&::before {
+		left: 0;
+		right: 100%;
+	}
+
+	&.text-spaced{
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		font-size: 0.875rem;
+	}
+	.icon {
+		font-size: 1.5em;
+		line-height: 1;
+	}
+
+	.text~.icon {
+		margin-left: 0.5em;
+	}
+
+	.icon~.text {
+		margin-left: 0.5em;
+	}
+	&.btn-lg {
+		font-size: 1.125rem;
+		min-height: auto;
+		padding: 0;
+		padding-bottom: 0.25em ;
+	}
+
+	&.bdw-thin {
+		--btn-line-b-width: 1px;
+	}
+
+	&.bdw-medium {
+		--btn-line-b-width: 2px;
+	}
+
+	&.bdw-thick {
+		--btn-line-b-width: 4px;
+	}
+
+	&.active,
+	&:active,
+	&:focus,
+	&:hover {
+		color: var(--btn-line-b-fg);
+		background: none;
+		opacity: 0.7;
+		text-decoration: none;
+
+		// box-shadow: none;
+		&::before {
+			right: calc(00% + 0.2em);
+		}
+
+	}
+}
+
+
+// mixin
+@mixin btn-line-b($colorName: 'primary') {
+	--btn-line-b-fg: var(--#{$colorName});
+}
+
+// color variation
+@each $color,
+$value in $theme-colors {
+	.btn-line-b.btn-#{""+$color} {
+		@include btn-line-b(#{$color});
+	}
+}

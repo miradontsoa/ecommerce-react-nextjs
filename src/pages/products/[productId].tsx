@@ -1,21 +1,19 @@
 // Book detail page
 
 import LayoutDefault from "components/layout/layout-default";
+import HeroProductA from "components/sections/layout/hero-product-a";
+import SectionCategory from "components/sections/section-categories";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React, { useEffect } from "react";
 import { Product } from "types/product";
-import {
-  getAllProductsPaths,
-  getProduct,
-} from "utils/productUtils";
+import { getAllProductsPaths, getProduct } from "utils/productUtils";
 
 const ProductPage = ({ product }: { product: Product }) => {
   return (
     <LayoutDefault>
-      <div>
-        <h2>{product?.name}</h2>
-        <p>{product?.description}</p>
-      </div>
+      <HeroProductA product={product} />
+
+      <SectionCategory borderTop="medium" />
     </LayoutDefault>
   );
 };

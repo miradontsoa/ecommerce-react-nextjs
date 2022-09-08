@@ -1,11 +1,11 @@
-import { Color } from "types/types";
+import { ThemeColor } from "types/types";
 import classNames from "classnames";
 import React from "react";
 import styles from "./icon-c.module.scss";
 type Props = {
   className?: string;
   imageElement: React.ReactElement;
-  color?: Color;
+  color?: ThemeColor;
   size?: "x-small" | "small" | "medium" | "large";
   shape?:
     | "square"

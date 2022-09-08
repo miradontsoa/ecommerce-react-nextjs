@@ -1,0 +1,40 @@
+.btn-outline-a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fg-color);
+    border: none;
+    box-shadow: inset 0px 0px 0px 0px rgba(var(--fg-color-rgb), 1),
+        0px 0px 0px 1px rgba(var(--fg-color-rgb), 0.2);
+    min-height: 2.5rem;
+    transition: 0.2s;
+    // padding: .375rem 1.25rem;
+    .icon {
+		font-size: 1.5em;
+		line-height: 1;
+	}
+
+	.text~.icon {
+		margin-left: 0.5em;
+	}
+
+	.icon~.text {
+		margin-left: 0.5em;
+	}
+    &.icon-only {
+        width: 2.5rem;
+        border-radius: 2.5rem;
+    }
+    
+
+    &:focus,
+    &:active,
+    &:hover {
+        transition: 0.3s;
+        color: var(--bg-color);
+        background-color: var(--fg-color);
+        box-shadow: inset 0px 0px 0px 3rem rgba(var(--fg-color-rgb), 1),
+            0px 0px 0px 1px rgba(var(--fg-color-rgb), 0.2);
+    }
+}

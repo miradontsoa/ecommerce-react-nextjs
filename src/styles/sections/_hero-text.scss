@@ -1,0 +1,15 @@
+.hero-text {
+  padding: 4rem 0;
+  width: 100%;
+  @media screen and (min-width: $breakpoint-md) {
+    // padding-right: var(--page-margin-x-md);
+    // padding-left: var(--page-margin-x-md);
+    padding: 4rem 0;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    // padding: 5.5rem 0;
+    // padding-bottom: 4rem;
+    padding: 4rem 0;
+  }
+}

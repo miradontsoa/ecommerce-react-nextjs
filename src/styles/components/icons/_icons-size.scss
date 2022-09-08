@@ -1,0 +1,53 @@
+// size
+.icon-sm{
+    font-size: 1.25em;
+    line-height: 0.75;
+    vertical-align: text-bottom;
+}
+.icon-md{
+    font-size: 24px !important;
+    line-height: 1;
+}
+.icon-lg{
+    font-size: 32px !important;
+}
+.icon-xl{
+    font-size: 40px !important;
+}
+.icon-box-md{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+}
+.icon-box-lg{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    min-height: 64px;
+}
+.icon-box-xl{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    min-height: 80px;
+}
+.icon-img-sm{
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    // line-height: 32px;
+}
+.icon-img-md{
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+}
+.icon-img-lg{
+    width: 64px;
+    height: 64px;
+    font-size: 64px;
+}

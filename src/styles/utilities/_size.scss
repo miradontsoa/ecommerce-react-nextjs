@@ -1,0 +1,29 @@
+.aspect-16x9{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    // &:is(img){
+    //     object-fit: cover;
+    // }
+}
+.aspect-21x9{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 21/9;
+}
+
+.width-small{
+    max-width: 480px;
+}
+.width-medium{
+    max-width: 880px;
+    margin: auto;
+}
+.width-large{
+    max-width: 1024px;
+    margin: auto;
+}
+.width-full{
+    max-width: none;
+    margin: auto;
+}

@@ -1,0 +1,146 @@
+// icon arrow
+// custom icon of button
+$arrowBorder: 1.5px;
+$arrowHeight: 0.75em;
+$arrowWidth: 1em;
+$arrowHeadSize: 0.75em;
+
+.icon-arrow-a {
+
+    .arrow-left,
+    .arrow-right,
+    .arrow-up,
+    .arrow-down {
+        position: relative;
+        height: $arrowWidth;
+        width: $arrowWidth;
+        display: inline-block;
+        border-radius: 0;
+        box-sizing: border-box;
+        transition: 0.3s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: $arrowHeadSize;
+            width: $arrowHeadSize;
+            border: $arrowBorder solid currentColor;
+            border-top: none;
+            border-right: none;
+            transition: 0.3s;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            transition: 0.3s;
+        }
+    }
+
+    .arrow-left {
+        &:before {
+            left: $arrowBorder;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &:after {
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: $arrowWidth;
+            border-top: $arrowBorder solid currentColor;
+        }
+    }
+
+    .arrow-right {
+        &:before {
+            right: $arrowBorder;
+            left: auto;
+            top: 50%;
+            transform: translateY(-50%) rotate(-135deg);
+        }
+
+        &:after {
+            right: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: $arrowWidth;
+            border-top: $arrowBorder solid currentColor;
+        }
+    }
+
+    .arrow-up {
+        &:before {
+            left: 50%;
+            top: $arrowBorder;
+            transform: translateX(-50%) rotate(135deg);
+        }
+
+        &:after {
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            height: $arrowWidth;
+            border-left: $arrowBorder solid currentColor;
+        }
+    }
+
+    .arrow-down {
+        &:before {
+            left: 50%;
+            top: auto;
+            bottom: $arrowBorder;
+            transform: translateX(-50%) rotate(-45deg);
+        }
+
+        &:after {
+            left: 50%;
+            top: auto;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: $arrowWidth;
+            border-left: $arrowBorder solid currentColor;
+        }
+    }
+}
+
+.btn:hover {
+    .icon-arrow-a.icon-anim {
+        .arrow-right {
+            // width: 2.5em;
+            transform: translateX(0.25em);
+
+            &:after {
+                width: 2em;
+            }
+        }
+
+        .arrow-left {
+            // width: 2.5em;
+            transform: translateX(-0.25em);
+
+            &:after {
+                width: 2em;
+            }
+        }
+
+        .arrow-up {
+            // width: 2.5em;
+            transform: translateY(-0.5em);
+
+            &:after {
+                height: 2em;
+            }
+        }
+
+        .arrow-down {
+            // width: 2.5em;
+            transform: translateY(0.5em);
+
+            &:after {
+                height: 2em;
+            }
+        }
+    }
+}

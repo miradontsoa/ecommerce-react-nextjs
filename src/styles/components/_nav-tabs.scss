@@ -1,0 +1,32 @@
+.nav-tabs-a{
+    border-bottom: none;
+    .nav-item{
+        font-size: 1.5rem;
+    }
+    .nav-link{
+        padding: 0;
+        margin: 0 1rem;
+        border: none;
+        color: currentColor;
+        opacity: 0.7;
+        &:hover,
+        &:focus,
+        &.active{
+            color: currentColor;
+            opacity: 1;
+        }
+        
+    }
+    .nav-item{
+        &:first-child{
+            .nav-link{
+                margin-left: 0;
+            }
+        }
+        &:last-child{
+            .nav-link{
+                margin-right: 0;
+            }
+        }
+    }
+}

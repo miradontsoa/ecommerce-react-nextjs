@@ -1,0 +1,8 @@
+.variant-info .title{
+    /* color: green; */
+    font-weight: bold;
+}
+.variant-error .title{
+    color: var(--red);
+}
+
