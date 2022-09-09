@@ -15,18 +15,10 @@
         position: relative;
         // padding-left: 1rem;
         // padding-right: 1rem;
-        padding: 0rem 1rem;
+        padding: 0rem var(--ck-page-margin-x);
         width: 100%;
-        @media screen and (min-width : $breakpoint-md) {
-            // padding-right: var(--page-margin-x-md);
-            // padding-left: var(--page-margin-x-md);
-            padding: 0rem var(--page-margin-x-md);
-        }
     
         @media screen and (min-width : $breakpoint-lg) {
-            // padding-right: var(--page-margin-x-lg);
-            // padding-left: var(--page-margin-x-lg);
-            padding: 0rem var(--page-margin-x-lg);
             padding-bottom: 4rem;
         }
     }

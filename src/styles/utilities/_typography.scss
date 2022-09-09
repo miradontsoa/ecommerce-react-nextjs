@@ -124,7 +124,7 @@
 @each $color,
 $value in $theme-colors {
     .text-#{""+$color} {
-        color: var(--#{$color}) !important;
+        color: var(--ck-#{$color}) !important;
     }
 }
 .text-muted-1{

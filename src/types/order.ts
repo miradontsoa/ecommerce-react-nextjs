@@ -1,4 +1,4 @@
-import { Product } from "./product"
+import { Product, ProductColor, ProductSize } from "./product"
 
 export type Order = {
     // products : Product[],
@@ -8,12 +8,16 @@ export type Order = {
 }
 
 export type OrderItem = {
-    product: Product,
-    // productRef: string,
+    product?: Product,
+    productRef: string,
     quantity: number,
     colorRef?: string, // color ref
     sizeRef?: string,
+}
 
+export interface OrderItemDetail extends OrderItem {
+    color?: ProductColor, // updated later
+    size?: ProductSize,
 }
 export type OrderShipping = {
     name: string,

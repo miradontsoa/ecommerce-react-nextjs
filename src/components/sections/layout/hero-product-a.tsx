@@ -2,11 +2,11 @@ import ReactionA from "components/feedback/reaction-a";
 import SelectColor from "components/form/input/select-color";
 import SelectShipping from "components/form/input/select-shipment";
 import SelectSize from "components/form/input/select-size";
-import ButtonFavorite from "components/general/button/button-favorite";
+import ButtonFavorite from "components/general/button/specific/button-favorite";
 import ButtonInlineA from "components/general/button/button-inline-a";
-import ButtonShare from "components/general/button/button-share";
+import ButtonShare from "components/general/button/specific/button-share";
 import IconA from "components/general/icon/icon-a";
-import { useOrder } from "hooks/order";
+import { useOrder } from "hooks/orderHooks";
 import { useState } from "react";
 import { OrderItem, OrderShipping } from "types/order";
 import { Product, ProductColor, ProductSize } from "types/product";
@@ -46,7 +46,7 @@ const HeroProductA = ({ product }: Props): React.ReactElement => {
 
   const _addToOrder = () => {
     const orderItem: OrderItem = {
-      product: product,
+      productRef: product.ref,
       quantity: 1,
       colorRef: color.ref,
       sizeRef: size.ref,
@@ -63,7 +63,7 @@ const HeroProductA = ({ product }: Props): React.ReactElement => {
         Count : {countOrderItems()}{" "}
         {getOrderItems()?.map((orderItem, index) => (
           <div key={index}>
-            <p>{orderItem.product?.ref} {orderItem.sizeRef}  {orderItem.colorRef}</p>
+            <p>{orderItem.productRef} {orderItem.sizeRef}  {orderItem.colorRef}</p>
             <p>{orderItem.quantity}</p>
           </div>
         ))}

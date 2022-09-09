@@ -1,101 +1,101 @@
-:root{
-    /* Colors*/
-    /* Theme colors */
-    --primary: #{$primary};
-    --bs-primary: #{$primary};
-    
-    --secondary: #{$secondary};
-    --bs-secondary: #{$secondary};
-    
-    --white: #ffffff;
-    --white-rgb: 255, 255, 255;
-    
-    --light-white: #F9F9F9;
-    --light: #FFFFFF;
-    --light-rgb: 255, 255, 255;
-    --dark: #394149;
-    --dark-rgb: 57, 65, 73;
-
-    --gray: #d0d9e2;
-
-    /* Page colors */
-    --bg-color: var(--white);
-    --bg-color-rgb: var(--white-rgb);
-    --fg-color: var(--dark);
-    --fg-color-rgb: var(--dark-rgb);
-    
-
-    /* Spacings */
-    /* page margins*/
-    --page-margin-x-md: #{$page-margin-x-md};
-    --page-margin-x-lg: #{$page-margin-x-lg};
-    
-    --page-margin-t-md: #{$page-margin-t-md};
-    --page-margin-t-lg: #{$page-margin-t-lg};
-
-    --page-margin-b-md: #{$page-margin-b-md};
-    --page-margin-b-lg: #{$page-margin-b-lg};
-
-    /* sections margins*/
-    --section-margin-y-sm: #{$section-margin-y-sm};
-    --section-margin-y-md: #{$section-margin-y-md};
-    --section-margin-y-lg: #{$section-margin-y-lg};
-
-
-    /* font family */
-    --font-sans-serif: #{$font-sans-serif};
-}
-
 :root {
-    /* Colors */
-    --ck-primary: #413dff;
-    --ck-primary-rgb: 65, 61, 255;
-    --ck-primary-light: #f6f6ff;
-    --ck-secondary: #b49597;
-    --ck-secondary-rgb: 180, 149, 151;
-    --ck-secondary-light: #fdf7f8;
+  /* Colors*/
+  /* Theme colors */
+  // --primary: #{$primary};
+  // --bs-primary: #{$primary};
 
-    --ck-dark: #353535;
-    --ck-dark-rgb: 53, 53, 53;
-    --ck-light: #eeeeee;
-    --ck-light-rgb: 238, 238, 238;
-    --ck-white: #ffffff;
-    --ck-white-rgb: 255,255,255;
+  // --secondary: #{$secondary};
+  // --bs-secondary: #{$secondary};
 
-    --ck-bg-color: --ck-light;
-    --ck-fg-color: --ck-dark;
-    --ck-bg-rgb: --ck-light-rgb;
-    --ck-fg-rgb: --ck-dark-rgb;
+  // Constant colors
+  --white: #ffffff;
+  --white-rgb: 255, 255, 255;
+  --light-white: #f9f9f9;
+  --light: #ffffff;
+  --light-rgb: 255, 255, 255;
+  --dark: #394149;
+  --dark-rgb: 57, 65, 73;
+  --gray: #d0d9e2;
+  --red: #f70b32;
+  --red-rgb: 247, 11, 50;
+  --blue: #0b8df7;
+  --blue-rgb: 11, 141, 247;
+  --green: #198754;
+  --green-rgb: 25, 135, 84;
+  --orange: #ffc107;
+  --orange-rgb: 255, 193, 7;
 
-    /* Size */
-    --ck-page-margin-x: 16px;
-    --ck-page-margin-t: 64px;
-    --ck-section-margin-y: 64px;
-    @media screen and (min-width: 768px) {
-        /* Appearance on desktop */
-        --ck-page-margin-x: 4rem                       ;
-    }
+  /* Page colors */
+  // --bg-color: var(--blue);
+  // --bg-color-rgb: var(--blue-rgb);
+  // --fg-color: var(--red);
+  // --fg-color-rgb: var(--red-rgb);
 
+  /* Spacings */
+  /* page margins*/
+  // --page-margin-x-md: #{$page-margin-x-md};
+  // --page-margin-x-lg: #{$page-margin-x-lg};
 
-    /* font */
-    --ck-font-serif: 
-    "SF Pro Display",
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-    --bs-font-monospace: SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
-    "Courier New",
-    monospace;
+  // --page-margin-t-md: #{$page-margin-t-md};
+  // --page-margin-t-lg: #{$page-margin-t-lg};
+
+  // --page-margin-b-md: #{$page-margin-b-md};
+  // --page-margin-b-lg: #{$page-margin-b-lg};
+
+  // /* sections margins*/
+  // --section-margin-y-sm: #{$section-margin-y-sm};
+  // --section-margin-y-md: #{$section-margin-y-md};
+  // --section-margin-y-lg: #{$section-margin-y-lg};
+
+  /* font family */
+  //   --ck-font-sans-serif: #{$font-sans-serif};
+  --ck-font-sans-serif: "SF Pro Display", "Inter", system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+
+  // ADDED FIX LATER
+
+  /* Theme Colors */
+  --ck-primary: var(--dark);
+  --ck-primary-rgb: var(--dark-rgb);
+  --ck-primary-light: #f6f6ff;
+  --ck-secondary: #b49597;
+  --ck-secondary-rgb: 180, 149, 151;
+  --ck-secondary-light: #fdf7f8;
+  --ck-alert: var(--red);
+  --ck-alert-rgb: var(--red-rgb);
+  --ck-info: var(--blue);
+  --ck-info-rgb: var(--blue-rgb);
+  --ck-success: var(--green);
+  --ck-success-rgb: var(--green-rgb);
+  --ck-warning: var(--orange);
+  --ck-warning-rgb: var(--orange-rgb);  
+  --ck-dark: var(--dark);
+  --ck-dark-rgb: var(--dark-rgb);
+  --ck-light: var(--light);
+  --ck-light-rgb: var(--light-rgb);
+  --ck-white: var(--white);
+  --ck-white-rgb: 255, 255, 255;
+
+  // foreground color
+  --ck-bg-color: var(--ck-light);
+  --ck-bg-color-rgb: var(--ck-light-rgb);
+  --ck-fg-color: var(--ck-dark);
+  --ck-fg-color-rgb: var(--ck-dark-rgb);
+
+  /* Size */
+  --ck-page-margin-x: 16px;
+  --ck-page-margin-y: 16px;
+  --ck-page-margin-t: 64px;
+  --ck-section-margin-y: 64px;
+  @media screen and (min-width: $breakpoint-md) {
+    /* Appearance on desktop */
+    --ck-page-margin-y: 3rem;
+    --ck-page-margin-x: 3rem;
+  }
+  @media screen and (min-width: $breakpoint-lg) {
+    /* Appearance on desktop */
+    --ck-page-margin-x: 4rem;
+  }
 }

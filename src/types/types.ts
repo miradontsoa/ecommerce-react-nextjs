@@ -16,9 +16,10 @@ export type ThemeColor =
   | "primary"
   | "secondary"
   | "success"
+  | "alert"
   | "info"
   | "warning"
-  | "danger"
-  | "dark"
   | "light"
-  | "currentColor";
+  | "dark"
+  | "currentColor"
+  ;

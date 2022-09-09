@@ -1,23 +1,14 @@
-import SearchbarA from "components/form/searchbar-a";
-import ButtonInlineA from "components/general/button/button-inline-a";
-import ButtonMenuA from "components/general/button/button-menu-a";
 import ButtonSolidA from "components/general/button/button-solid-a";
-import IconA from "components/general/icon/icon-a";
-import NavbarA from "components/navigation/navbar/navbar-a";
 import HeroA from "components/sections/layout/hero-a";
 import SectionA from "components/sections/layout/section-a";
-import { MenuItem } from "types/types";
 import classNames from "classnames";
 import { NextPage } from "next";
-import Head from "next/head";
 import React, { useState } from "react";
 import styles from "./home-a.module.scss";
 import ImageB from "components/media-text/images/image-b";
-import FooterA from "components/footer/footer-a";
 import SectionFeatured from "components/sections/section-featured";
 import SectionTrending from "components/sections/section-trending";
 import SectionCategory from "components/sections/section-categories";
-import FooterB from "components/footer/footer-b";
 import LayoutDefault from "components/layout/layout-default";
 
 const HomePage: NextPage = () => {

@@ -18,13 +18,13 @@
         // background: #f4f;
         @media screen and (min-width : $breakpoint-md) {
             // min-height: 80px;
-            padding: var(--page-margin-t-md) var(--page-margin-x-md);
+            padding: var(--ck-page-margin-y) var(--ck-page-margin-x);
         }
     
-        @media screen and (min-width : $breakpoint-lg) {
-            padding: 2rem var(--page-margin-x-lg);
-            margin-top: calc(var(--page-margin-t-lg) - 1rem);
-        }
+        // @media screen and (min-width : $breakpoint-lg) {
+        //     padding: 2rem var(--page-margin-x-lg);
+        //     margin-top: calc(var(--page-margin-t-lg) - 1rem);
+        // }
     }
     .nav-group{
         display: flex;

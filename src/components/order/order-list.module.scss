@@ -1,0 +1,51 @@
+.listHead {
+  border-bottom: 1px solid black;
+}
+.orderLine {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(var(--ck-fg-color-rgb), 0.2);
+}
+.cell{
+    padding-top: 1rem;
+}
+
+.image {
+  display: block;
+  vertical-align: bottom;
+  line-height: 1;
+  width: 160px;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  object-position: top center;
+  //   height: 100%;
+}
+
+.title {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+.qty {
+  display: inline-block;
+  text-align: center;
+  min-width: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.qtyGroup{
+    display: flex;
+    // align-items: center;
+}
+.price {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.unitPrice{
+  font-size: 1.125rem;
+  font-weight: 600;
+}

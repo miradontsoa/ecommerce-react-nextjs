@@ -1,5 +1,5 @@
-import IconA from "../icon/icon-a";
-import ButtonInlineA from "./button-inline-a";
+import IconA from "../../icon/icon-a";
+import ButtonInlineA from "../button-inline-a";
 type Props = {
   text?: string
   productRef?: string

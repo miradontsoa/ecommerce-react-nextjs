@@ -9,7 +9,7 @@
         // width: 100vw;
         right: 0;
         // bottom: 0;
-        background: rgba(var(--light-rgb), 0.75);
+        background: rgba(var(--ck-light-rgb), 0.75);
         z-index: -1;
 
         display: flex;
@@ -46,8 +46,8 @@
 .navbar-light{
     .nav-fullscreen{
         @media screen and (min-width: $breakpoint-lg){
-            background: rgba($white, 0.8);
-            color: var(--fg-color);
+            background: rgba(var(--ck-light-rgb), 0.8);
+            color: var(--ck-fg-color);
         }
     }
 }

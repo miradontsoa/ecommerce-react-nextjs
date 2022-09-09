@@ -1,13 +1,16 @@
-import OrderList from "components/data-list/order-list";
+import OrderList from "components/order/order-list";
 import LayoutDefault from "components/layout/layout-default";
 import SectionOrderList from "components/sections/section-order-list";
+import OrderSummary from "components/order/order-summary";
 
 const CartPage = ({}) => {
   return (
     <LayoutDefault>
       <div className="with-right-sidebar-layout">
         <div className="sidebar">
-          <div className="sidebar-nav">Total</div>
+          <div className="sidebar-nav">
+            <OrderSummary />
+          </div>
         </div>
 
         <div className="page-content">

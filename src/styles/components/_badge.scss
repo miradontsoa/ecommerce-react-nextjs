@@ -3,10 +3,22 @@
     padding: 0.125em 0.5em;
 }
 .badge-info{
-    color: var(--bg-color);
-    background-color: var(--fg-color);
+    color: var(--ck-bg-color);
+    background-color: var(--ck-info);
 }
 .badge-alert{
-    color: var(--bg-color);
-    background-color: rgb(248, 26, 45);
+    color: var(--ck-bg-color);
+    background-color: var(--ck-alert);
+}
+.badge-warning{
+    color: var(--ck-fg-color);
+    background-color: var(--ck-warning);
+}
+.badge-success{
+    color: var(--ck-bg-color);
+    background-color: var(--ck-success);
+}
+.badge-light{
+    color: var(--ck-fg-color);
+    background-color: var(--ck-light);
 }

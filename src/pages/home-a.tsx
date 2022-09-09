@@ -1,8 +1,7 @@
 import SearchbarA from "components/form/searchbar-a";
 import ButtonInlineA from "components/general/button/button-inline-a";
-import ButtonMenuA from "components/general/button/button-menu-a";
+import ButtonMenuA from "components/general/icon/icon-menu-a";
 import ButtonSolidA from "components/general/button/button-solid-a";
-import IconE from "components/general/icon/icon-e";
 import IconA from "components/general/icon/icon-a";
 import NavbarA from "components/navigation/navbar/navbar-a";
 import NavtabsA from "components/navigation/navtabs/navtabs-a";
@@ -22,7 +21,6 @@ import CardProductB from "components/general/card/card-product-b";
 import CardCategoryA from "components/general/card/card-category-a";
 import CardCategoryB from "components/general/card/card-category-b";
 import ImageB from "components/media-text/images/image-b";
-import FooterB from "components/footer/footer-b";
 import FooterA from "components/footer/footer-a";
 
 const HomeA: NextPage = () => {

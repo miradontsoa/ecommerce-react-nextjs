@@ -1,5 +1,5 @@
-import OrderList from "components/data-list/order-list";
-import { useOrder } from "hooks/order";
+import OrderList from "components/order/order-list";
+import { useOrder } from "hooks/orderHooks";
 
 const SectionOrderList = () => {
     

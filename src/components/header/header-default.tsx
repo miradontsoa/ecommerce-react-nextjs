@@ -1,14 +1,14 @@
 import classNames from "classnames";
 import SearchbarA from "components/form/searchbar-a";
 import ButtonInlineA from "components/general/button/button-inline-a";
-import ButtonMenuA from "components/general/button/button-menu-a";
 import IconA from "components/general/icon/icon-a";
 import NavbarA from "components/navigation/navbar/navbar-a";
-import { useOrder } from "hooks/order";
+import { useOrder } from "hooks/orderHooks";
 import Link from "next/link";
 import React from "react";
 import { MenuItem } from "types/types";
 import styles from "./header-default.module.scss";
+import IconMenuA from "components/general/icon/icon-menu-a";
 type Props = {
   className?: string;
   scrolled?: boolean;
@@ -138,7 +138,7 @@ const HeaderDefault = ({
         logoElement={<img src="/img/logo-b-dark.svg" alt="Logo or Brand" />}
         leftNavMenu={primaryMenu}
         rightNavMenu={secondaryMenu}
-        menuButtonIcon={<ButtonMenuA isOpen={isMenuVisible} />}
+        menuButtonIcon={<IconMenuA isOpen={isMenuVisible} />}
         isMenuVisible={isMenuVisible}
         onMenuToggler={onMenuToggler}
         // onMenuToggler={setIsMenuVisible}

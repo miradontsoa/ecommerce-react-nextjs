@@ -1,8 +1,8 @@
 .form-select-a{
     --fsa-bd-width: 1px;
-    --fsa-bd-color: rgba(var(--fg-color-rgb), 0.26);
+    --fsa-bd-color: rgba(var(--ck-fg-color-rgb), 0.26);
     border: var(--fsa-bd-width) solid var(--fsa-bd-color);
-    background-color: rgba(var(--fg-color-rgb), 0.1);
+    background-color: rgba(var(--ck-fg-color-rgb), 0.1);
     min-height: 2.5rem;
     border-radius: 0.25rem;
 }

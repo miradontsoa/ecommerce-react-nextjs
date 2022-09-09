@@ -1,6 +1,6 @@
 import ReactionA from "components/feedback/reaction-a";
 import { useState } from "react";
-import ButtonInlineA from "./button-inline-a";
+import ButtonInlineA from "../button-inline-a";
 
 type Props = {
   productRef?: string;
@@ -12,8 +12,8 @@ type Props = {
 
 /**
  * Add to favorite button
- * @param param0 
- * @returns 
+ * @param param0
+ * @returns
  */
 const ButtonFavorite = ({
   productRef,
@@ -25,25 +25,19 @@ const ButtonFavorite = ({
   const [_like, setLike] = useState(like);
   const addToFavorite = async () => {
     // TODO add product ref to favorite API call here
-    console.log(`TODO : An API call to add to favorite ${productRef}`)
+    console.log(`TODO : An API call to add to favorite ${productRef}`);
     // If success, toggle like icon state
     onSetLike && onSetLike(!_like);
     setLike(!_like);
-    
   };
   return (
-    <button
-      className="btn-reset"
-      type="button"
+    <ButtonInlineA
       onClick={() => {
         addToFavorite();
       }}
-    >
-      <ButtonInlineA
-        iconElement={<ReactionA like={_like} />}
-        text={showText && text}
-      />
-    </button>
+      iconElement={<ReactionA like={_like} />}
+      text={showText && text}
+    />
   );
 };
 

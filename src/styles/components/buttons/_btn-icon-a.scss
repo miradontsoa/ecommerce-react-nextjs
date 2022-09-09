@@ -1,5 +1,5 @@
 .btn-icon-a {
-	--btn-icon-a-fg: var(--dark);
+	--btn-icon-a-fg: var(--ck-dark);
 	--btn-icon-a-width: 2px;
 	color: var(--btn-icon-a-fg);
 	border: none;
@@ -82,7 +82,7 @@
 
 // mixin
 @mixin btn-icon-a($colorName: 'primary') {
-	--btn-icon-a-fg: var(--#{$colorName});
+	--btn-icon-a-fg: var(--ck-#{$colorName});
 }
 
 // color variation

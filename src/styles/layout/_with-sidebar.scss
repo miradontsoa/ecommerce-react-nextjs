@@ -11,16 +11,8 @@
     // grid-template-rows: auto 1fr;
     grid-template-rows: 1fr;
     position: relative;
-    gap: 3rem;
-    padding: 0 1rem;
-    @media screen and (min-width : $breakpoint-md) {
-        padding: 0 var(--page-margin-x-md);
-    }
-
-    @media screen and (min-width : $breakpoint-lg) {
-        // padding: 8rem var(--page-margin-x-lg);
-        padding: 0 var(--page-margin-x-lg);
-    }
+    gap: 4rem;
+    padding: 0 var(--ck-page-margin-x);
     .sidebar-left{
 
         .sidebar-nav{

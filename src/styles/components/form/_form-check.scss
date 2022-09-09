@@ -15,7 +15,7 @@
         cursor: pointer;
         z-index: 1;
         margin: 0;
-        box-shadow: inset 0px 0px 0px var(--fcc-bd-width)  rgba(var(--fg-color-rgb), 0.5);
+        box-shadow: inset 0px 0px 0px var(--fcc-bd-width)  rgba(var(--ck-fg-color-rgb), 0.5);
     }
     .form-check-color-icon{
         position: absolute;
@@ -33,7 +33,7 @@
             bottom: 0;
             left: 0;
             right: 0%;
-            box-shadow: 0px 0px 0px 2px  rgba(var(--fg-color-rgb), 0.8);
+            box-shadow: 0px 0px 0px 2px  rgba(var(--ck-fg-color-rgb), 0.8);
             border-radius: var(--fcc-icon-size);
             opacity: 0;
             transform: none;
@@ -67,7 +67,7 @@
         cursor: pointer;
         z-index: 1;
         margin: 0;
-        box-shadow: inset 0px 0px 0px var(--fcs-bd-width)  rgba(var(--fg-color-rgb), 0.5);
+        box-shadow: inset 0px 0px 0px var(--fcs-bd-width)  rgba(var(--ck-fg-color-rgb), 0.5);
     }
     .form-check-size-icon{
         position: absolute;
@@ -91,7 +91,7 @@
             bottom: 0;
             left: 0;
             right: 0%;
-            box-shadow: 0px 0px 0px 2px  rgba(var(--fg-color-rgb), 0.8);
+            box-shadow: 0px 0px 0px 2px  rgba(var(--ck-fg-color-rgb), 0.8);
             border-radius: var(--fcs-icon-size);
             opacity: 0;
             transform: none;
@@ -100,7 +100,7 @@
     }
     .form-check-input:checked {
         
-        background: rgba(var(--fg-color-rgb), 0.2);
+        background: rgba(var(--ck-fg-color-rgb), 0.2);
         box-shadow: none;
         & + .form-check-size-icon{
             &:before{

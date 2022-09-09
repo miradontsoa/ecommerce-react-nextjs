@@ -1,11 +1,14 @@
 .btnInlineA {
   --btn-line-a-width: 2px;
-  // padding-left: 0;
-  // padding-right: 0;
+  padding: 0;
+  border: none;
+  background: none;
   display: inline-flex;
   align-items: center;
   position: relative;
   margin: 0;
+  font-size: inherit;
+  cursor: pointer;
 
   .text {
     position: relative;

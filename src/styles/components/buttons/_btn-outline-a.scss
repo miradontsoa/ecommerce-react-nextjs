@@ -3,10 +3,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--fg-color);
+    color: var(--ck-fg-color);
     border: none;
-    box-shadow: inset 0px 0px 0px 0px rgba(var(--fg-color-rgb), 1),
-        0px 0px 0px 1px rgba(var(--fg-color-rgb), 0.2);
+    box-shadow: inset 0px 0px 0px 0px rgba(var(--ck-fg-color-rgb), 1),
+        0px 0px 0px 1px rgba(var(--ck-fg-color-rgb), 0.2);
     min-height: 2.5rem;
     transition: 0.2s;
     // padding: .375rem 1.25rem;
@@ -32,9 +32,9 @@
     &:active,
     &:hover {
         transition: 0.3s;
-        color: var(--bg-color);
-        background-color: var(--fg-color);
-        box-shadow: inset 0px 0px 0px 3rem rgba(var(--fg-color-rgb), 1),
-            0px 0px 0px 1px rgba(var(--fg-color-rgb), 0.2);
+        color: var(--ck-bg-color);
+        background-color: var(--ck-fg-color);
+        box-shadow: inset 0px 0px 0px 3rem rgba(var(--ck-fg-color-rgb), 1),
+            0px 0px 0px 1px rgba(var(--ck-fg-color-rgb), 0.2);
     }
 }

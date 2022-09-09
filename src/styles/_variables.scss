@@ -6,47 +6,13 @@ $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px; //1600
 
 
-$primary: #55697e;
-$secondary: #00b167;
-
-$white : #ffffff;
-$black: #394149;
-$black-text: #394149;
-
 $theme-colors: (
-    primary: $primary,
-    secondary: $secondary,
-    light: $white,
-    dark: $black,
+    primary,
+    secondary,
+    success,
+    alert,
+    info,
+    warning,
+    light,
+    dark,
 );
-
-// Font
-$font-sans-serif : "SF Pro Display",
-"Inter",
-system-ui,
--apple-system,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-Arial,
-"Noto Sans",
-"Liberation Sans",
-sans-serif,
-"Apple Color Emoji",
-"Segoe UI Emoji",
-"Segoe UI Symbol",
-"Noto Color Emoji";
-
-// Page margin
-$page-margin-x-md : 3rem;
-$page-margin-x-lg : 4rem;
-
-$page-margin-t-md : 1rem;
-$page-margin-t-lg : 4rem;
-
-$page-margin-b-md: 3rem;
-$page-margin-b-lg: 3rem;
-
-$section-margin-y-sm: 6rem;
-$section-margin-y-md: 6rem;
-$section-margin-y-lg: 8rem;

@@ -1,15 +1,7 @@
 .section-page{
     .section-body{
-        padding: 4rem 1rem;
+        padding: 4rem var(--ck-page-margin-x);
         position: relative;
-        @media screen and (min-width : $breakpoint-md) {
-            padding: 4rem var(--page-margin-x-md);
-        }
-    
-        @media screen and (min-width : $breakpoint-lg) {
-            // padding: 8rem var(--page-margin-x-lg);
-            padding: 4rem var(--page-margin-x-lg);
-        }
     }
     p{
         font-size: 1rem;

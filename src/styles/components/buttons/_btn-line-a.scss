@@ -1,5 +1,5 @@
 .btn-line-a {
-	--btn-line-a-fg: var(--dark);
+	--btn-line-a-fg: var(--ck-dark);
 	--btn-line-a-width: 2px;
 	color: var(--btn-line-a-fg);
 	border: none;
@@ -93,7 +93,7 @@
 
 // mixin
 @mixin btn-line-a($colorName: 'primary') {
-	--btn-line-a-fg: var(--#{$colorName});
+	--btn-line-a-fg: var(--ck-#{$colorName});
 }
 
 // color variation

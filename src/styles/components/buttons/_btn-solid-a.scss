@@ -1,13 +1,13 @@
 .btn-solid-a {
-    --btn-solid-a-fg: var(--fg-color);
-    --btn-solid-a-fg-rgb: var(--fg-color-rgb);
-    --btn-solid-a-bg: var(--bg-color);
+    --btn-solid-a-fg: var(--ck-fg-color);
+    --btn-solid-a-fg-rgb: var(--ck-fg-color-rgb);
+    --btn-solid-a-bg: var(--ck-bg-color);
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: var(--btn-solid-a-fg, $black);
-    background-color: var(--btn-solid-a-bg, $white);
+    color: var(--btn-solid-a-fg);
+    background-color: var(--btn-solid-a-bg);
     border: none;
     box-shadow: inset 0px 0px 0px 0px rgba(var(--btn-solid-a-fg-rgb), 0.1),
         0px 4px 4px -2px rgba(var(--btn-solid-a-fg-rgb), 0.2);
@@ -45,7 +45,7 @@
     &:hover {
         transition: 0.2s;
         // color: var(--btn-solid-a-bg);
-        background-color: var(--btn-solid-a-bg, $white);
+        background-color: var(--btn-solid-a-bg);
         box-shadow: inset 0px 0px 0.5em 2.25em rgba(var(--btn-solid-a-fg-rgb), 0.2),
             0px 0px 0px 0px var(--btn-solid-a-fg);
     }
@@ -53,13 +53,15 @@
 // mixin
 @mixin btn-solid-a( $colorName: 'primary') {
     @if $colorName=='light' {
-        --btn-solid-a-fg: var(--dark);
-        --btn-solid-a-fg-rgb: var(--dark-rgb);
-        --btn-solid-a-bg: var(--light);
+        // --btn-solid-a-fg: var(--ck-#{$colorName});
+        // --btn-solid-a-fg-rgb: var(--ck-#{$colorName}-rgb);
+        --btn-solid-a-fg: var(--ck-dark);
+        --btn-solid-a-fg-rgb: var(--ck-dark-rgb);
+        --btn-solid-a-bg: var(--ck-light);
     } @else {
-        --btn-solid-a-fg: var(--white);
-        --btn-solid-a-fg-rgb: var(--white-rgb);
-        --btn-solid-a-bg: var(--#{$colorName});
+        --btn-solid-a-fg: var(--ck-white);
+        --btn-solid-a-fg-rgb: var(--ck-white-rgb);
+        --btn-solid-a-bg: var(--ck-#{$colorName});
     }
 }
 
