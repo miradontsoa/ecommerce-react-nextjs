@@ -1,0 +1,100 @@
+@import "/src/styles/variables";
+
+.navItem {
+  display: flex;
+  position: relative;
+  white-space: nowrap;
+  padding: 0rem;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  .navLink {
+    padding: 0.5rem 0;
+    display: flex;
+    flex: 1;
+    width: 100%;
+  }
+  &.active > .subMenuBtn{
+    
+    font-weight: 500;
+  }
+
+//   &.active > .navLink ,
+  .navLink[data-active=true] {
+    // background-color: #ff0;
+    font-weight: bold;
+  }
+}
+
+.subMenu {
+  padding: 0;
+  transition: 0.3s;
+  position: static;
+  visibility: hidden;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  // display: none;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  // flex: 1 1;
+  height: 0px;
+  width: 100%;
+  transition: 0.1s;
+  // transform: translateY(-0.5rem);
+  transform: translateY(-0.25rem);
+  padding-left: 1rem;
+
+  &.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: fit-content;
+    transform: none;
+    transition: 0.3s;
+  }
+
+  .subMenu {
+    top: 0;
+  }
+
+  .navItem {
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.subMenuBtn {
+  border: none;
+  background: none;
+  padding: 0;
+
+  .arrowIconClose {
+    display: none;
+  }
+
+  &.showSubMenu {
+    .arrowIconClose {
+      display: inline-block;
+    }
+
+    .arrowIconOpen {
+      display: none;
+    }
+  }
+}
+
+.arrowIcon {
+  display: block;
+  line-height: 0;
+  margin-left: 0.5em;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    font-size: 1em;
+  }
+}

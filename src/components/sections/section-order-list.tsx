@@ -3,7 +3,7 @@ import { useOrder } from "hooks/orderHooks";
 
 const SectionOrderList = () => {
     
-  const { getOrderItems, countOrderItems } = useOrder();
+  const { countOrderItems } = useOrder();
   return (
     <>
       <div className="hero-text">
@@ -12,7 +12,7 @@ const SectionOrderList = () => {
           Shopping cart ({countOrderItems()})
         </h2>
       </div>
-      <OrderList orderItems={getOrderItems()} />
+      <OrderList/>
     </>
   );
 };

@@ -189,6 +189,10 @@ export const pants: Product[] = [
         name: "Women",
         ref: "women",
       },
+      {
+        name: "Accessories",
+        ref: "accessories",
+      }
     ],
   },
   {

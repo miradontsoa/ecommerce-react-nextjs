@@ -25,18 +25,18 @@ const HeaderDefault = ({
   const primaryMenu: MenuItem[] = [
     {
       title: "Accessories",
-      href: "#accessories",
+      href: "/category/accessories",
     },
     {
       title: "Collections",
       subMenuItems: [
         {
           title: "Men",
-          href: "#men",
+          href: "/category/men",
         },
         {
           title: "Women",
-          href: "#women",
+          href: "/category/women",
         },
         {
           title: "Kids",
@@ -44,11 +44,11 @@ const HeaderDefault = ({
           subMenuItems: [
             {
               title: "Girls",
-              href: "#girls",
+              href: "/category/girls",
             },
             {
               title: "Boys",
-              href: "#boys",
+              href: "/category/boys",
             },
           ],
         },
@@ -61,7 +61,7 @@ const HeaderDefault = ({
   const secondaryMenu: MenuItem[] = [
     {
       element: (
-        <a href="#account">
+        <a href="/account">
           <ButtonInlineA
             text="Account"
             iconPosition="right"

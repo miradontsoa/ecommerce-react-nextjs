@@ -13,6 +13,9 @@ export interface Product {
 export type ProductCategory = {
   name: string;
   ref: string;
+  description?:string,
+  image?: string,
+  parentRef?: string,
 };
 
 /**

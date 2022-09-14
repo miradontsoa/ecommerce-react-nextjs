@@ -2,6 +2,7 @@ import React from "react";
 
 export type MenuItem = {
   title?: string;
+  slug?: string;
   href?: string;
   active?: boolean;
   color?: string;
@@ -10,6 +11,7 @@ export type MenuItem = {
   size?: "small" | "medium" | "large";
   onClick?: () => void;
   subMenuItems?: MenuItem[];
+  secondaryMenuItems?: MenuItem[];
 };
 
 export type ThemeColor =

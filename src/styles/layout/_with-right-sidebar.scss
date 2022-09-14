@@ -2,8 +2,8 @@
     display: grid;
     grid-template-areas:
         "content sidebar" ;
-    // grid-template-columns:  1fr 240px;
-    grid-template-columns:  1fr 320px;
+    grid-template-columns:  1fr 280px;
+    // grid-template-columns:  1fr 320px;
     grid-template-rows: 1fr;
     position: relative;
     gap: 4rem;

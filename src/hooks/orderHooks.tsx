@@ -1,7 +1,6 @@
 import { OrderContext } from "contexts/order-context";
-import React, { useContext, useEffect, useState } from "react";
-import { OrderItem, OrderItemDetail } from "types/order";
-import { getProduct } from "utils/productUtils";
+import { useContext } from "react";
+import { OrderItem } from "types/order";
 
 /**
  * Add order item to orders
@@ -81,7 +80,7 @@ export function useOrder() {
         itemExist = true;
       }
     });
-    
+
     if (itemExist) {
       // Update current order item
       _items = [...order?.items];
@@ -94,49 +93,25 @@ export function useOrder() {
     orderContext.setOrder(newOrder);
   };
 
+  /**
+   * Get a specific order
+   * @returns
+   */
   const getOrder = () => {
     return orderContext.order;
   };
+
+  /**
+   * Get all order items
+   * @returns
+   */
   const getOrderItems = () => {
     return orderContext.order?.items || [];
   };
 
-  const getDetailedOrderItems = (orderItems: OrderItem[]) => {
-    const [_orderItems, setOrderItems] = useState(
-      orderItems as OrderItemDetail[]
-    );
-    const updateOrderItemsInfo = async () => {
-      if (orderItems) {
-        let updatedOrderItems = await Promise.all(
-          orderItems.map(async (orderItem) => {
-            let orderItemDetail: OrderItemDetail = { ...orderItem };
-            let product = await getProduct(orderItem.productRef);
-            if (product) {
-              orderItemDetail.product = product;
-            }
-            if (orderItem.sizeRef) {
-              let size = product.sizes.find((size) => {
-                return size.ref === orderItem.sizeRef;
-              });
-              orderItemDetail.size = size;
-            }
-            if (orderItem.colorRef) {
-              let color = product.colors.find((color) => {
-                return color.ref === orderItem.colorRef;
-              });
-              orderItemDetail.color = color;
-            }
-            return orderItemDetail;
-            // return { ...orderItem, product: product } as OrderItem;
-          })
-        );
-        setOrderItems(updatedOrderItems);
-      }
-    };
-    useEffect(() => {
-      updateOrderItemsInfo();
-    }, [orderItems]);
-    return _orderItems;
+  const getOrderItemsDetailed = () => {
+    const orderContext = useContext(OrderContext);
+    return orderContext.orderDetail?.items;
   };
 
   /**
@@ -156,48 +131,6 @@ export function useOrder() {
     // return orderContext.order?.items?.length || 0;
   };
 
-  /**
-   * Sum of the ordere items
-   * TODO : load it from the server not from the frontend
-   * @returns
-   */
-  const sumOfOrder = () => {
-    // load latest product info from server
-    // const [sumOfOrderValues, setSumOfOrderValues] = useState({
-    //   subTotal: 0,
-    //   shipping: 0,
-    //   total: 0,
-    // });
-    // TODO : TODO : load it from the server not from the frontend
-    // useEffect(() => {
-    //   const sumOrderFromServer = await getSumOfOrder();
-    //   setSumOfOrderValues(sumOrderFromServer)
-    // }, order?.items)
-    // return sumOfOrderValues;
-
-    const _orderItems = getDetailedOrderItems(order?.items);
-    let subTotal = 0;
-    if (!_orderItems) {
-      subTotal = 0;
-    } else {
-      let orderItemsPrices = _orderItems?.map((orderItem) => {
-        return orderItem.quantity * orderItem.product?.price;
-      });
-      subTotal = orderItemsPrices.reduce((prevCount, currentCount) => {
-        return prevCount + currentCount;
-      });
-    }
-
-    let shipping = 0;
-    let total = shipping + subTotal;
-
-    // TODO : add taxes,
-    return {
-      subTotal,
-      shipping,
-      total,
-    };
-  };
   const setShipping = () => {
     // TODO : set shipping info
   };
@@ -207,9 +140,8 @@ export function useOrder() {
     addOrderItemQuantity,
     getOrder,
     getOrderItems,
-    getDetailedOrderItems,
+    getOrderItemsDetailed,
     countOrderItems,
-    sumOfOrder,
     setShipping,
   };
 }

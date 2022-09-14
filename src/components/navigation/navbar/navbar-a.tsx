@@ -3,6 +3,7 @@ import classNames from "classnames";
 import styles from "./navbar-a.module.scss";
 import { MenuItem } from "types/types";
 import NavA from "../nav/nav-a";
+import Link from "next/link";
 
 type Props = {
   className?: string;
@@ -28,7 +29,7 @@ const NavbarA = ({
   logoElement,
   logoText,
   logoTextSubtitle,
-  logoHref = "#",
+  logoHref = "/",
   menuButtonIcon,
   leftNavMenu,
   rightNavMenu,
@@ -56,31 +57,34 @@ const NavbarA = ({
       <header className={classNames(className, styles.navbarA)}>
         <nav className={classNames(styles.navContainer, _containerWidth)}>
           {logoElement && (
-            <a className={classNames(styles.logo)} href={logoHref}>
-              <span className={styles.logoImage}>{logoElement}</span>
-              {logoText && (
-                <span className={styles.logoText}>
-                  <span className={styles.title}>{logoText}</span>
-                  {logoTextSubtitle && (
-                    <span className={styles.subTitle}>{logoTextSubtitle}</span>
-                  )}
-                </span>
-              )}
-            </a>
+            <Link href={logoHref}>
+              <a className={classNames(styles.logo)}>
+                <span className={styles.logoImage}>{logoElement}</span>
+                {logoText && (
+                  <span className={styles.logoText}>
+                    <span className={styles.title}>{logoText}</span>
+                    {logoTextSubtitle && (
+                      <span className={styles.subTitle}>
+                        {logoTextSubtitle}
+                      </span>
+                    )}
+                  </span>
+                )}
+              </a>
+            </Link>
           )}
-          
 
           <div className={`${styles.navbarCollapse} ${styles.collapse}`}>
             {_isMenuVisible && (
               <>
                 {leftNavMenu && (
                   <div className={classNames(styles.leftNavElt)}>
-                    <NavA menuItems={leftNavMenu}/>
+                    <NavA menuItems={leftNavMenu} />
                   </div>
                 )}
                 {rightNavMenu && (
                   <div className={classNames(styles.rightNavElt)}>
-                    <NavA menuItems={rightNavMenu}/>
+                    <NavA menuItems={rightNavMenu} />
                   </div>
                 )}
               </>
@@ -89,9 +93,7 @@ const NavbarA = ({
 
           {menuButtonIcon && (
             <button
-              className={classNames(
-                styles.menuButton
-              )}
+              className={classNames(styles.menuButton)}
               type="button"
               onClick={toggleMenu}
             >

@@ -6,10 +6,10 @@ import { Product } from "types/product";
  * @param filter : filter {category : string}
  * @returns
  */
-const getProducts = async (filter?: {
+const getProductsFetch = async (filter?: {
   category?: string | string[];
 }): Promise<Product[]> => {
-  let apiUri = `${ENDPOINT.API}/products`;
+  let apiUri = `${ENDPOINT.API}/products?`;
   if (filter?.category) {
     apiUri = `${apiUri}&category=${filter.category}`;
   }
@@ -32,14 +32,14 @@ const getProducts = async (filter?: {
  * Get all products path for static page generation
  * @returns
  */
-const getAllProductsPaths = async (): Promise<
+const getAllProductsPathsFetch = async (): Promise<
   {
     params: {
       productId: string;
     };
   }[]
 > => {
-  const products = await getProducts();
+  const products = await getProductsFetch();
   return products.map((product: Product) => {
     return {
       params: {
@@ -54,7 +54,7 @@ const getAllProductsPaths = async (): Promise<
  * @param productId
  * @returns
  */
-const getProduct = async (productId: string): Promise<Product> => {
+const getProductFetch = async (productId: string): Promise<Product> => {
   const apiUri = `${ENDPOINT.API}/products/${productId}`;
   // const apiUri = `/api/products/${productId}`;
   const res = await fetch(apiUri, {
@@ -72,7 +72,7 @@ const getProduct = async (productId: string): Promise<Product> => {
 
 
 export {
-  getProducts,
-  getAllProductsPaths,
-  getProduct,
+  getProductsFetch,
+  getAllProductsPathsFetch ,
+  getProductFetch,
 }

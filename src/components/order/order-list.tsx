@@ -2,19 +2,13 @@ import classNames from "classnames";
 import ButtonSolidA from "components/general/button/button-solid-a";
 import IconA from "components/general/icon/icon-a";
 import { useOrder } from "hooks/orderHooks";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { OrderItem, OrderItemDetail } from "types/order";
-import { getProduct } from "utils/productUtils";
+import React from "react";
 import styles from "./order-list.module.scss";
-type Props = {
-  orderItems: OrderItem[];
-  onRemoveOrderItem?: (orderItem: OrderItem) => void;
-};
-const OrderList = ({ orderItems }: Props) => {
-  const { getDetailedOrderItems, addOrderItemQuantity, removeOrderItem } =
+type Props = {};
+const OrderList = ({}: Props) => {
+  const { getOrderItemsDetailed, addOrderItemQuantity, removeOrderItem } =
     useOrder();
-  const _orderItems = getDetailedOrderItems(orderItems);
+  const orderItems = getOrderItemsDetailed();
 
   return (
     <>
@@ -34,7 +28,7 @@ const OrderList = ({ orderItems }: Props) => {
       </div>
       {/* List content */}
       <div className={classNames(styles.listContent)}>
-        {_orderItems?.map((orderItem, index) => (
+        {orderItems?.map((orderItem, index) => (
           <div
             className={classNames("cart-list-columns", styles.orderLine)}
             key={`${orderItem.productRef}${orderItem.colorRef}${orderItem.sizeRef}`}
@@ -57,7 +51,8 @@ const OrderList = ({ orderItems }: Props) => {
                     <h4 className={styles.title}>{orderItem?.product?.name}</h4>
                     {orderItem?.product && (
                       <p className={classNames(styles.unitPrice, "mb-0")}>
-                        {orderItem?.product?.priceUnit || "$"}{orderItem?.product?.price}
+                        {orderItem?.product?.priceUnit || "$"}
+                        {orderItem?.product?.price}
                       </p>
                     )}
                     {orderItem?.sizeRef && (
@@ -115,9 +110,8 @@ const OrderList = ({ orderItems }: Props) => {
 
                   <ButtonSolidA
                     onClick={() => {
-                      
                       if (orderItem?.quantity >= 0) {
-                      addOrderItemQuantity(orderItem, 1);
+                        addOrderItemQuantity(orderItem, 1);
                       }
                     }}
                     color="primary"
