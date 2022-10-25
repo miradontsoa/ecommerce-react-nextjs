@@ -37,7 +37,7 @@ const SectionCategory = ({
           <div className={classNames(styles.sectionContent, "mt-3")}>
             <div className="row row-cols-md-2 row-cols-lg-4 g-5">
               <div className="col">
-                <Link href={"#"}>
+                <Link href={"/category/cloth"}>
                   <a>
                     <CardCategoryA
                       textAlign="center"
@@ -54,7 +54,7 @@ const SectionCategory = ({
                 </Link>
               </div>
               <div className="col">
-                <Link href={"#"}>
+                <Link href={"/category/pant"}>
                   <a>
                     <CardCategoryA
                       textAlign="center"
@@ -64,14 +64,14 @@ const SectionCategory = ({
                           scaleOnHover={true}
                         />
                       }
-                      title="Sports"
+                      title="Pant"
                       viewText="Discover"
                     />
                   </a>
                 </Link>
               </div>
               <div className="col">
-                <Link href={"#"}>
+                <Link href={"/category/women"}>
                   <a>
                     <CardCategoryA
                       textAlign="center"
@@ -81,14 +81,14 @@ const SectionCategory = ({
                           scaleOnHover={true}
                         />
                       }
-                      title="Woman"
+                      title="Women"
                       viewText="Discover"
                     />
                   </a>
                 </Link>
               </div>
               <div className="col">
-                <Link href={"#"}>
+                <Link href={"/category/fruits"}>
                   <a>
                     <CardCategoryA
                       textAlign="center"

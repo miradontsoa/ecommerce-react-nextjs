@@ -37,5 +37,13 @@ export const categories: ProductCategory[] = [
       name: "Pant",
       ref: "pant",
     },
+    {
+      name: "Sports",
+      ref: "sports",
+    },
+    {
+      name: "Fruits",
+      ref: "fruits",
+    },
 ]
   

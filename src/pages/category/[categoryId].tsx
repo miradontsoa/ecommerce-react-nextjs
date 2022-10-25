@@ -28,17 +28,20 @@ const CategoryPage = ({ category, products, featuredProduct }: Props) => {
   //   };
   return (
     <LayoutDefault
-      heroElement={
-        <HeroCategory
-          category={category}
-          //   parentCategory={parentCategory}
-        />
-      }
+      heroElement={category && <HeroCategory category={category} />}
     >
       {/* Featured products is JS generated */}
-      <SectionFeaturedProduct marginTop="none" product={featuredProduct} />
-      <SectionProductsA products={products} />
-      <SectionCategory borderTop="medium" />
+      <>
+        {featuredProduct && (
+          <SectionFeaturedProduct marginTop="none" product={featuredProduct} />
+        )}
+        {products?.length > 0 ? (
+          <SectionProductsA products={products} />
+        ) : (
+          <p className="h2 mb-5">No product founds</p>
+        )}
+        <SectionCategory borderTop="medium" />
+      </>
     </LayoutDefault>
   );
 };

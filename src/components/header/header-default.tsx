@@ -31,26 +31,31 @@ const HeaderDefault = ({
       title: "Collections",
       subMenuItems: [
         {
+          title: "All collections",
+          href: "/collections",
+        },
+        {
           title: "Men",
-          href: "/category/men",
+          href: "/collections/men",
+          // href: "/category/men",
         },
         {
           title: "Women",
           href: "/category/women",
+          subMenuItems: [
+            {
+              title: "Dress",
+              href: "/collections/women/dress",
+            },
+            {
+              title: "Shoes",
+              href: "/collections/women/shoes",
+            },
+          ],
         },
         {
           title: "Kids",
-
-          subMenuItems: [
-            {
-              title: "Girls",
-              href: "/category/girls",
-            },
-            {
-              title: "Boys",
-              href: "/category/boys",
-            },
-          ],
+          href: "/collections/kids",
         },
       ],
     },
