@@ -6,14 +6,18 @@ import { Product } from "types/product";
 import SectionA from "./layout/section-a";
 
 type Props = {
+  className?: string;
   product: Product;
+  marginX?: "large" | "medium" | "small" | "none";
   marginTop?: "large" | "medium" | "small" | "none";
   marginBottom?: "large" | "medium" | "small" | "none";
   borderBottom?: "medium" | "none";
   borderTop?: "medium" | "none";
 };
 const SectionFeaturedProduct = ({
+  className,
   product,
+  marginX,
   marginTop,
   marginBottom,
   borderBottom,
@@ -32,6 +36,8 @@ const SectionFeaturedProduct = ({
   };
   return (
     <SectionA
+      className={className}
+      marginX={marginX}
       marginTop={marginTop}
       marginBottom={marginBottom}
       borderBottom={borderBottom}
@@ -61,7 +67,7 @@ const SectionFeaturedProduct = ({
 
                 <div className="row mt-0">
                   <div className="col">
-                    <h3 className="fw-bolder display-6">{product?.name}</h3>
+                    <h3 className="fw-bolder display-6 font-title">{product?.name}</h3>
                   </div>
                 </div>
 
@@ -73,14 +79,16 @@ const SectionFeaturedProduct = ({
 
                 <div className="btn-group-a mt-5">
                   <Link href={`/products/${product?.ref}`}>
-                    <ButtonSolidA
+                    <a>
+                      <ButtonSolidA
                         className="me-1"
-                      onClick={() => {
-                        _addToOrder();
-                      }}
-                      color="light"
-                      text="View item"
-                    />
+                        onClick={() => {
+                          _addToOrder();
+                        }}
+                        color="light"
+                        text="View item"
+                      />
+                    </a>
                   </Link>
                   <ButtonSolidA
                     onClick={() => {

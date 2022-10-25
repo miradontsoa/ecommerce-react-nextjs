@@ -1,7 +1,9 @@
 import classNames from "classnames";
+import ButtonInlineA from "components/general/button/button-inline-a";
 import ButtonSolidA from "components/general/button/button-solid-a";
 import IconA from "components/general/icon/icon-a";
 import { useOrder } from "hooks/orderHooks";
+import Link from "next/link";
 import React from "react";
 import styles from "./order-list.module.scss";
 type Props = {};
@@ -65,6 +67,11 @@ const OrderList = ({}: Props) => {
                         Color: {orderItem?.color?.name}
                       </p>
                     )}
+                    <Link href={`products/${orderItem?.product?.ref}`}>
+                      <a>
+                        <ButtonInlineA text="Details"  />
+                      </a>
+                    </Link>
                     {/* <ButtonSolidA text="Modify" color="primary" /> */}
                   </div>
                 </div>

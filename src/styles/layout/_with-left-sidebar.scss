@@ -1,4 +1,6 @@
+.with-left-sidebar-layout,
 .with-sidebar-layout{
+    --top-margin : 5rem;
     display: grid;
     // columns: ;
     // grid-template-areas:
@@ -6,19 +8,21 @@
     //     "sidebar footer";
     grid-template-areas:
         "sidebar content" ;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 240px 1fr;
     // grid-template-columns: 1fr 4fr 1fr;
     // grid-template-rows: auto 1fr;
     grid-template-rows: 1fr;
     position: relative;
     gap: 4rem;
     padding: 0 var(--ck-page-margin-x);
-    .sidebar-left{
-
+    .sidebar{
+        position: sticky;
+        top: var(--top-margin);
+        overflow-y: auto;
+        padding-bottom: 2rem;
+        height: 100%;
+        max-height: calc(100vh - var(--top-margin));
         .sidebar-nav{
-
-            position: sticky;
-            top: 5rem + 3rem;
         }
     }
     

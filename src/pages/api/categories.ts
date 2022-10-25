@@ -15,7 +15,7 @@ export default function handler(
 ) {
   let categoriesResult: ProductCategory[] = [];
   let parentCategoryRef = req.query?.parent;
-  console.log(typeof parentCategoryRef);
+  // console.log(typeof parentCategoryRef);
   if (parentCategoryRef) {
     categoriesResult = categories.filter((category) => {
       if (category.parentRef === undefined || category.parentRef === null) {

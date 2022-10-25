@@ -6,6 +6,9 @@ import classNames from "classnames";
 import Link from "next/link";
 import SectionA from "./layout/section-a";
 import styles from "./section.module.scss";
+import React from "react";
+import { Product } from "types/product";
+import productServices from "services/productServices";
 
 type Props = {
   borderTop?: "medium" | "none";
@@ -19,6 +22,18 @@ const SectionTrending = ({
   marginTop,
   marginBottom,
 }: Props) => {
+  const [products, setProducts] = React.useState([] as Product[]);
+  const loadProducts = async () => {
+    const products = productServices.getProducts({
+      sort: "trending",
+      maxCount: 3,
+    });
+    setProducts(products);
+  };
+  // Load products
+  React.useEffect(() => {
+    loadProducts()
+  }, []);
   return (
     <SectionA
       borderTop={borderTop}
@@ -30,7 +45,7 @@ const SectionTrending = ({
           <div className={styles.sectionTitle}>
             <div className="row">
               <div className="col-12 col-lg-6">
-                <h3 className={classNames("title-3")}>
+                <h3 className={classNames("title-3 font-title")}>
                   Trending &amp; Popular
                 </h3>
                 <div className={classNames("text-medium")}>
@@ -91,7 +106,29 @@ const SectionTrending = ({
 
             {/* Grid of products */}
             <div className="row mt-5 row-cols-md-3 gx-5">
-              <div className="col">
+              {products?.map((product) => {
+                return (
+                  <div key={product.ref} className="col">
+                    <Link href={`products/${product.ref}`}>
+                      <a>
+                        <CardProductA
+                          title={product.name}
+                          price="$150"
+                          tags={product.categories?.map((cat) => {
+                            return {
+                              title: cat.name,
+                            };
+                          })}
+                          imageElement={
+                            <ImageA src={product.image} scaleOnHover={true} />
+                          }
+                        />
+                      </a>
+                    </Link>
+                  </div>
+                );
+              })}
+              {/* <div className="col">
                 <Link href={"/products/basket-b"}>
                   <a>
                     <CardProductA
@@ -114,90 +151,9 @@ const SectionTrending = ({
                     />
                   </a>
                 </Link>
-              </div>
+              </div> */}
 
-              <div className="col">
-                <Link href={"#"}>
-                  <a>
-                    <CardProductA
-                      title="Coolverse"
-                      price="$150"
-                      rating={4.7}
-                      ratingElement={
-                        <span className="text-muted-1">4 Reviews</span>
-                      }
-                      aspect="3-lines"
-                      like={false}
-                      colors={[
-                        {
-                          rgb: "#d2d2d2",
-                        },
-                        {
-                          rgb: "#222234",
-                        },
-                        {
-                          rgb: "#c4af86",
-                        },
-                      ]}
-                      tags={[
-                        {
-                          title: "Shoes",
-                        },
-                        {
-                          title: "Leather",
-                        },
-                      ]}
-                      quantityElement={<span>In stock</span>}
-                      imageElement={
-                        <ImageA
-                          src="/img/img-4-square.jpg"
-                          scaleOnHover={true}
-                        />
-                      }
-                    />
-                  </a>
-                </Link>
-              </div>
-
-              <div className="col">
-                <Link href={"#"}>
-                  <a>
-                    <CardProductA
-                      title="Liore Basket"
-                      price="$150"
-                      rating={4.7}
-                      ratingElement={
-                        <span className="text-muted-1">4 Reviews</span>
-                      }
-                      aspect="4-lines"
-                      like={false}
-                      colors={[
-                        {
-                          rgb: "#d2d2d2",
-                        },
-                        {
-                          rgb: "#222234",
-                        },
-                      ]}
-                      tags={[
-                        {
-                          title: "Shoes",
-                        },
-                        {
-                          title: "Leather",
-                        },
-                      ]}
-                      quantityElement={<span>In stock</span>}
-                      imageElement={
-                        <ImageA
-                          src="/img/img-3-square.jpg"
-                          scaleOnHover={true}
-                        />
-                      }
-                    />
-                  </a>
-                </Link>
-              </div>
+               
             </div>
           </div>
         </>

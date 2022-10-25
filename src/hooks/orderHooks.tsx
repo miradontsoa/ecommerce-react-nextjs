@@ -15,7 +15,7 @@ export function useOrder() {
    */
   const addToOrder = (orderItem: OrderItem) => {
     if (!orderItem) {
-      console.error("No oreder Item");
+      console.error("No ordered Item");
       return;
     }
     let _items = [];
@@ -122,9 +122,17 @@ export function useOrder() {
     if (!orderContext.order?.items) {
       return 0;
     }
+    if (orderContext.order?.items.length <= 0) {
+      return 0;
+    }
     let counts = orderContext.order?.items?.map((orderItem) => {
       return orderItem.quantity;
     });
+    if (!counts && counts.length < 1) {
+      return 0;
+    }
+    // console.log(counts)
+    // return 0
     return counts.reduce((prevCount, currentCount) => {
       return prevCount + currentCount;
     });

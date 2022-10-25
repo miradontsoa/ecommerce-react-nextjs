@@ -2,19 +2,21 @@ import LayoutDefault from "components/layout/layout-default";
 import HeroCategory from "components/sections/hero/hero-category";
 import SectionCategory from "components/sections/section-categories";
 import SectionFeaturedProduct from "components/sections/section-featured-product";
-import { products } from "data/products";
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import { Product, ProductCategory } from "types/product";
-import { getProductsFetch } from "utils/productFetch";
-import { getAllCategoriesPathsFetch, getCategoryFetch } from "utils/categoryFetch";
+import { getProducts } from "services/productApiServices";
+import {
+  getAllCategoriesPathsFetch,
+  getCategoryFetch,
+} from "utils/categoryFetch";
 import SectionProductsA from "components/sections/section-products-a";
 
 type Props = {
-  category: ProductCategory,
-  products?: Product[],
-  featuredProduct?: Product,
-}
+  category: ProductCategory;
+  products?: Product[];
+  featuredProduct?: Product;
+};
 const CategoryPage = ({ category, products, featuredProduct }: Props) => {
   //   const parentCategory = {
   //     name: "Women",
@@ -25,11 +27,14 @@ const CategoryPage = ({ category, products, featuredProduct }: Props) => {
   //     ref: "accessories",
   //   };
   return (
-    <LayoutDefault>
-      <HeroCategory
-        category={category}
-        //   parentCategory={parentCategory}
-      />
+    <LayoutDefault
+      heroElement={
+        <HeroCategory
+          category={category}
+          //   parentCategory={parentCategory}
+        />
+      }
+    >
       {/* Featured products is JS generated */}
       <SectionFeaturedProduct marginTop="none" product={featuredProduct} />
       <SectionProductsA products={products} />
@@ -56,13 +61,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const [category, products] = await Promise.all([
     getCategoryFetch(params?.categoryId as string),
     // []
-    getProductsFetch({
-      category: params?.categoryId,
+    getProducts({
+      categories: params?.categoryId,
       // category: "shoes",
     }),
   ]);
   return {
-    props : {
+    props: {
       category: category,
       products: products,
       featuredProduct: products[0] || null,

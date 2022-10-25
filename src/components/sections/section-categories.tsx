@@ -29,7 +29,7 @@ const SectionCategory = ({
           <div className={styles.sectionTitle}>
             <div className="row">
               <div className="col-12 col-lg-6">
-                <h3 className={classNames("title-3")}>Categories</h3>
+                <h3 className={classNames("title-3 font-title")}>Categories</h3>
               </div>
             </div>
           </div>

@@ -10,6 +10,7 @@ type Props = {
   contentElement: React.ReactElement;
   footerElement?: React.ReactElement;
   footerContainerWidth?: "full" | "content";
+  marginX?: "large" | "medium" | "small" | "none";
   marginTop?: "large" | "medium" | "small" | "none";
   marginBottom?: "large" | "medium" | "small" | "none";
   borderBottom?: "medium" | "none";
@@ -23,6 +24,7 @@ const SectionA = ({
   contentElement,
   footerElement,
   footerContainerWidth,
+  marginX = "none",
   marginTop,
   marginBottom,
   borderTop = "none",
@@ -103,6 +105,7 @@ const SectionA = ({
           "container-fluid",
           styles[`borderTop-${borderTop}`],
           styles[`borderBottom-${borderBottom}`],
+          styles[`mx-${marginX}`],
           _marginTop,
           _marginBottom
         )}

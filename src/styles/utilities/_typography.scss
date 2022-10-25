@@ -143,3 +143,8 @@ $value in $theme-colors {
 .text-shadow{
     text-shadow: 0px 0px 4px rgba(127,127,127,0.2);
 }
+
+.font-title{
+    font-family: var(--ck-font-title);
+    letter-spacing: -0.025em;
+}

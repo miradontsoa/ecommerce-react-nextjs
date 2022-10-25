@@ -71,14 +71,11 @@ const SectionProductsA = ({
                             rgb: "rgb(239 184 56)",
                           },
                         ]}
-                        tags={[
-                          {
-                            title: "Shoes",
-                          },
-                          {
-                            title: "Leather",
-                          },
-                        ]}
+                        tags={product?.categories?.map(category => {
+                          return {
+                            title: category.name
+                          }
+                        })}
                         imageElement={
                           <ImageA
                             src={product.image}

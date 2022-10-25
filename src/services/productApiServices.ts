@@ -6,12 +6,28 @@ import { Product } from "types/product";
  * @param filter : filter {category : string}
  * @returns
  */
-const getProductsFetch = async (filter?: {
-  category?: string | string[];
+const getProducts = async (filter?: {
+  sort?: "random" | "featured" | "recents" | "trending" | "popular" | string;
+  maxCount?: number;
+  categories?: string | string[];
+
 }): Promise<Product[]> => {
   let apiUri = `${ENDPOINT.API}/products?`;
-  if (filter?.category) {
-    apiUri = `${apiUri}&category=${filter.category}`;
+  if (filter?.categories) {
+    // console.log(filter?.category)
+    if (Array.isArray(filter?.categories)) {
+      filter.categories.forEach(category => {
+        apiUri = `${apiUri}&category=${category}`;
+      }); 
+    } else {
+      apiUri = `${apiUri}&category=${filter.categories}`;
+    }
+  }
+  if (filter?.sort) {
+    apiUri = `${apiUri}&sort=${filter.sort}`;
+  }
+  if (filter?.maxCount) {
+    apiUri = `${apiUri}&maxCount=${filter.maxCount}`;
   }
   try {
     const res = await fetch(apiUri, {
@@ -26,20 +42,20 @@ const getProductsFetch = async (filter?: {
   } catch (error) {
     throw Error(error);
   }
-}
+};
 
 /**
  * Get all products path for static page generation
  * @returns
  */
-const getAllProductsPathsFetch = async (): Promise<
+const getAllProductsPaths = async (): Promise<
   {
     params: {
       productId: string;
     };
   }[]
 > => {
-  const products = await getProductsFetch();
+  const products = await getProducts();
   return products.map((product: Product) => {
     return {
       params: {
@@ -54,7 +70,7 @@ const getAllProductsPathsFetch = async (): Promise<
  * @param productId
  * @returns
  */
-const getProductFetch = async (productId: string): Promise<Product> => {
+const getProduct = async (productId: string): Promise<Product> => {
   const apiUri = `${ENDPOINT.API}/products/${productId}`;
   // const apiUri = `/api/products/${productId}`;
   const res = await fetch(apiUri, {
@@ -68,11 +84,6 @@ const getProductFetch = async (productId: string): Promise<Product> => {
     return null;
   }
   return product;
-}
+};
 
-
-export {
-  getProductsFetch,
-  getAllProductsPathsFetch ,
-  getProductFetch,
-}
+export { getProducts, getAllProductsPaths, getProduct };

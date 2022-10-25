@@ -3,8 +3,6 @@
 
 import { Product, ProductCategory } from "types/product";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { products } from "data/products";
-import productsServices from "../services/productServices";
 import categoryServices from "../services/categoryServices";
 
 type ErrorData = {

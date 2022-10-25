@@ -6,6 +6,7 @@
     position: relative;
 }
 
+
 .bg {
     position: absolute;
     top: 0;
@@ -113,8 +114,10 @@
         content: "";
         position: absolute;
         top: -1px;
-        left: var(--ck-page-margin-x);
-        right: var(--ck-page-margin-x);
+        left: 0;
+        right: 0;
+        // left: var(--ck-page-margin-x);
+        // right: var(--ck-page-margin-x);
         border-top: 2px solid var(--ck-dark);
     }
 }
@@ -125,8 +128,15 @@
         position: absolute;
         top: auto;
         bottom: -1px;
-        left: var(--ck-page-margin-x);
-        right: var(--ck-page-margin-x);
+        left: 0;
+        right: 0;
+        // left: var(--ck-page-margin-x);
+        // right: var(--ck-page-margin-x);
         border-bottom: 2px solid var(--ck-dark);
     }
+}
+
+.mx-none{
+    padding-left: 0;
+    padding-right: 0;
 }

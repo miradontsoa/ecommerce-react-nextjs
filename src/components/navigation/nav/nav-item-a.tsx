@@ -58,11 +58,11 @@ const NavItemA = ({
   useEffect(() => {
     // onSecondaryMenuItems && onSecondaryMenuItems(menuItem.secondaryMenuItems || []);
     if (
-      router.pathname === currentPathUri &&
+      router.asPath === currentPathUri &&
       !menuItem.subMenuItems &&
       menuItem.secondaryMenuItems
     ) {
-    //   console.log(menuItem.secondaryMenuItems);
+      //   console.log(menuItem.secondaryMenuItems);
       onSecondaryMenuItems && onSecondaryMenuItems(menuItem.secondaryMenuItems);
     }
   }, [menuItem]);
@@ -72,8 +72,9 @@ const NavItemA = ({
       className={classNames(
         itemClassName,
         styles.navItem,
-        _menuItem.active && styles.active,
-        _menuItem.active && activeClassName,
+        (_menuItem.active || currentPathUri === router.asPath) && styles.active,
+        (_menuItem.active || currentPathUri === router.asPath) &&
+          activeClassName,
         _menuItem.subMenuItems && styles.hasChild
       )}
       ref={ref}
@@ -86,12 +87,16 @@ const NavItemA = ({
           onSecondaryMenuItems(_menuItem.secondaryMenuItems || []);
       }}
     >
+      {/* {currentPathUri} */}
       {!_menuItem.subMenuItems && (
         <>
           {_menuItem.element && <>{_menuItem.element}</>}
           {_menuItem.title && (
             <NavLink href={_menuItem?.href || currentPathUri || "."}>
-              <a className={classNames(linkClassName, styles.navLink)}>
+              <a
+                className={classNames(linkClassName, styles.navLink)}
+                data-active={currentPathUri === router.asPath}
+              >
                 {_menuItem.title}
               </a>
             </NavLink>
@@ -109,7 +114,7 @@ const NavItemA = ({
               styles.navLink,
               _showSubMenu && styles.showSubMenu
             )}
-            aria-expanded={_showSubMenu ? "true" : "false"}
+            aria-expanded={_showSubMenu || menuItem.active ? "true" : "false"}
             onClick={() => {
               setShowSubMenu(!_showSubMenu);
             }}
@@ -179,7 +184,7 @@ const NavItemA = ({
               return (
                 <NavItemA
                   menuItem={subMenuItem}
-                  key={index}
+                  key={subMenuItem.slug}
                   itemClassName={itemClassName}
                   activeClassName={activeClassName}
                   linkClassName={linkClassName}

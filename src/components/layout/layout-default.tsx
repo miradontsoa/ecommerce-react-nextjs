@@ -3,16 +3,25 @@ import FooterDefault from "components/footer/footer-default";
 import HeaderDefault from "components/header/header-default";
 import { OrderContextProvider } from "contexts/order-context";
 import Head from "next/head";
-import React, { ReactNode, useState } from "react";
+import React, { ReactElement, ReactNode, useState } from "react";
 import styles from "./layout-default.module.scss";
 
 type Props = {
   className?: string;
+  heroElement?: ReactElement;
+  fullwidthElement?: ReactElement;
   children?: ReactNode;
   title?: string;
   description?: string;
 };
-const LayoutDefault = ({ className, children, title, description }: Props) => {
+const LayoutDefault = ({
+  className,
+  heroElement,
+  fullwidthElement,
+  children,
+  title,
+  description,
+}: Props) => {
   const [isMenuVisible, setIsMenuVisible] = useState(true);
 
   // On scroll behaviors
@@ -54,7 +63,9 @@ const LayoutDefault = ({ className, children, title, description }: Props) => {
             onMenuToggler={setIsMenuVisible}
             scrolled={pageScrolled}
           />
-          {children}
+          {heroElement}
+          {fullwidthElement}
+          {children && <div className={styles.sections}>{children}</div>}
           <FooterDefault />
         </div>
       </OrderContextProvider>

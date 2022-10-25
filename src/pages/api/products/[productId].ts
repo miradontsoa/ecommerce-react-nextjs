@@ -4,7 +4,7 @@
 import { Product } from "types/product";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { products } from "data/products";
-import productServices from "../services/productServices";
+import productServices from "services/productServices";
 
 type ErrorData = {
   message: string;

@@ -10,6 +10,7 @@ type Props = {
   className?: string;
   title?: string;
   titleIconElement?: React.ReactElement;
+  footerElement?: React.ReactElement;
   menuItems?: MenuItem[];
   parentPath?: string;
   openedActivePath?: string;
@@ -28,6 +29,7 @@ const SidebarNavA = ({
   className,
   title,
   titleIconElement,
+  footerElement,
   menuItems,
   expanded = true,
   parentPath,
@@ -39,6 +41,7 @@ const SidebarNavA = ({
   // Open and activate menu branch from provided openedActivePath
   // remove first / from base path
   let parsedPath = openedActivePath.split("/");
+  // console.log(parsedPath)
   parsedPath = parsedPath.filter((slug) => {
     return slug != "";
   });
@@ -67,7 +70,6 @@ const SidebarNavA = ({
   return (
     <div
       className={classNames(
-        "sidebar-menu-a",
         className,
         styles.sidebar,
         expanded && styles.expanded
@@ -169,22 +171,8 @@ const SidebarNavA = ({
         </div>
       </div>
 
-      <div className="footer">
-
-        <ul className="nav">
-          <li className="nav-item">
-            <a
-              className="nav-link-off btn btn-solid-b btn-primary"
-              href="https://buy.paddle.com/product/644914"
-            >
-              <span className="icon">
-                <i className="ion ion-ios-cart"></i>
-              </span>
-              <span className="text">Buy it now</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+      {footerElement && <div className="footer">
+      </div>}
     </div>
   );
 };

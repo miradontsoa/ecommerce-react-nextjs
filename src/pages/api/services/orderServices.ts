@@ -1,3 +1,4 @@
+import productServices from "services/productServices";
 import {
   Address,
   OrderItem,
@@ -5,7 +6,6 @@ import {
   OrderShipping,
   OrderSum,
 } from "types/order";
-import productsServices from "./productServices";
 
 const getShipping = async (ref: string) => {
   // await new Promise(resolve => setTimeout(resolve, 100));
@@ -25,13 +25,18 @@ const getAddress = async (ref: string) => {
   return orderShippingAddress;
 };
 
-const getOrderItemsDetail = async (orderItems: OrderItem[]) : Promise<OrderItemDetail[]>=> {
+const getOrderItemsDetail = async (
+  orderItems: OrderItem[]
+): Promise<OrderItemDetail[]> => {
   let items: OrderItemDetail[] = [];
   if (orderItems) {
+    if (orderItems.length <= 0) {
+      return [];
+    }
     let updatedOrderItems = await Promise.all(
       orderItems.map(async (orderItem) => {
         let orderItemDetail: OrderItemDetail = { ...orderItem };
-        let product = await productsServices.getProduct(orderItem.productRef);
+        let product = await productServices.getProduct(orderItem.productRef);
         if (product) {
           orderItemDetail.product = product;
         }
@@ -58,14 +63,18 @@ const getOrderItemsDetail = async (orderItems: OrderItem[]) : Promise<OrderItemD
 
 /**
  * Compute order sum, total, delivery fees
- * @param items 
- * @returns 
+ * @param items
+ * @returns
  */
 const totalSumOrder = async (items: OrderItemDetail[]) => {
-    let subTotal = 0;
-    if (!items) {
+  let subTotal = 0;
+  if (!items) {
+    subTotal = 0;
+  } else {
+    if (items.length <= 0) {
       subTotal = 0;
     } else {
+      // console.log(items.length);
       let orderItemsPrices = items?.map((orderItem) => {
         return orderItem.quantity * orderItem.product?.price;
       });
@@ -73,18 +82,19 @@ const totalSumOrder = async (items: OrderItemDetail[]) => {
         return prevCount + currentCount;
       });
     }
-  
-    let totalShipping = 0;
-    let total = totalShipping + subTotal;
-  
-    // TODO : add taxes, discount, coupon : AWAIT FOR TAXES, COUPON, DISCOUNT here from API or ,
-    const sum : OrderSum= {
-      subTotal: subTotal,
-      shipping: totalShipping,
-      total : total,
-    };
-    return sum;
-}
+  }
+
+  let totalShipping = 0;
+  let total = totalShipping + subTotal;
+
+  // TODO : add taxes, discount, coupon : AWAIT FOR TAXES, COUPON, DISCOUNT here from API or ,
+  const sum: OrderSum = {
+    subTotal: subTotal,
+    shipping: totalShipping,
+    total: total,
+  };
+  return sum;
+};
 
 export default {
   getShipping,

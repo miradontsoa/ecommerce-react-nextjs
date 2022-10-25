@@ -3,27 +3,32 @@
 .sidebar {
   --sb-margin-y: 32px;
   --sb-margin-x: 24px;
-  --nav-padding: 16px;
+  --nav-padding: 24px;
   --item-active-bg: rgba(var(--ck-primary-rgb), 0.1);
+  --nav-link-color: rgba(var(--ck-fg-color-rgb), 0.7);
+  --nav-link-active-color: rgba(var(--ck-fg-color-rgb), 1);
   height: 100%;
   min-height: 100%;
   background: var(--ck-bg-color);
   color: var(--ck-primary);
-  padding: var(--sb-margin-y, 32px) var(--sb-margin-x, 32px);
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 80%;
-  overflow-y: auto;
   // nested ul, nav
   .subMenu,
   .nav {
     padding-left: var(--nav-padding);
   }
+  .subMenuBtn[aria-expanded="true"] ~ .subMenu {
+    // margin-top: 0.5rem;
+    // margin-bottom: 0.5rem;
+  }
 
   @media screen and (min-width: $breakpoint-lg) {
     // width: 240px;
-    height: 100vh;
+    // height: 100vh;
   }
 
   &.expanded {
@@ -68,11 +73,28 @@
 }
 .body {
   flex: 1;
+  width: 100%;
 }
 .navGroup {
   > .nav {
     padding-left: 0;
+    > .navItem {
+      font-size: 1.25rem;
+      color: var(--nav-link-color);
+
+      > .navLink {
+        color: inherit;
+        &:hover {
+          // color: rgba(var(--ck-fg-color-rgb), 1);
+          color: var(--nav-link-active-color);
+        }
+      }
+    }
     > .navItem.active {
+      > .navLink {
+        color: var(--nav-link-active-color);
+      }
+
       button.navLink {
         &::before {
           width: 0;
@@ -103,14 +125,17 @@
   display: block;
   width: 100%;
   position: relative;
+  font-size: 1.125rem;
   //   line-height: 1.2;
   // &.active > .navLink ,
   // &.active > [aria-expanded=true]{
-  &.active > .subMenuBtn{
+  &.active > .subMenuBtn  {
     font-weight: 500;
     color: var(--ck-primary);
+    
+    color: var(--nav-link-active-color);
   }
-  .navLink[data-active=true] {
+  .navLink[data-active="true"] {
     font-weight: 500;
     color: var(--ck-primary);
     .icon {
@@ -126,7 +151,9 @@
 // li,
 // a,
 .navLink {
-  color: var(--ck-fg-color);
+  // color: var(--ck-fg-color);
+
+  color: var(--nav-link-color);
   width: 100%;
   min-height: 40px;
   display: flex;
@@ -140,8 +167,6 @@
     position: absolute;
     z-index: -1;
     top: 0;
-    left: calc(-1 * var(--nav-padding));
-    left: calc(-1 * var(--nav-padding) + 0px);
     //   left: 0px;
     right: calc(-1 * var(--sb-margin-x));
     right: 0;
@@ -155,6 +180,7 @@
   }
 
   &:hover {
+    color: var(--nav-link-active-color);
     .icon {
       color: var(--ck-primary);
     }
@@ -167,5 +193,5 @@
   }
 }
 .subMenu {
-  border-left: 1.5px solid var(--item-active-bg);
+  border-left: 1px solid var(--ck-fg-color);
 }

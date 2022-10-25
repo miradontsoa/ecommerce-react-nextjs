@@ -6,19 +6,21 @@ import { useOrder } from "hooks/orderHooks";
 
 const CartPage = ({}) => {
   return (
-    <LayoutDefault>
-      <div className="with-right-sidebar-layout">
-        <div className="sidebar">
-          <div className="sidebar-nav">
-            <OrderSummary />
+    <LayoutDefault
+      fullwidthElement={
+        <div className="with-right-sidebar-layout">
+          <div className="sidebar">
+            <div className="sidebar-nav">
+              <OrderSummary />
+            </div>
+          </div>
+
+          <div className="page-content">
+            <SectionOrderList />
           </div>
         </div>
-
-        <div className="page-content">
-          <SectionOrderList />
-        </div>
-      </div>
-    </LayoutDefault>
+      }
+    ></LayoutDefault>
   );
 };
 export default CartPage;

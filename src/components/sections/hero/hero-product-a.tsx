@@ -55,7 +55,7 @@ const HeroProductA = ({ product }: Props): React.ReactElement => {
   };
   return (
     <>
-      <span style={{
+      {/* <span style={{
         position: "fixed",
         backgroundColor: "#f0f",
         zIndex: "10"
@@ -67,7 +67,7 @@ const HeroProductA = ({ product }: Props): React.ReactElement => {
             <p>{orderItem.quantity}</p>
           </div>
         ))}
-      </span>
+      </span> */}
       <section id="top" className="section hero hero-b hero-fit-height">
         <div className="hero-body">
           <div className="hero-content ">
@@ -95,7 +95,7 @@ const HeroProductA = ({ product }: Props): React.ReactElement => {
                         );
                       })}
                     </h5>
-                    <h2 className="title h-title h1 fw-bold mb-3">
+                    <h2 className="title h-title h1 fw-bold mb-3 font-title">
                       {product.name}
                     </h2>
                     {product.description && (

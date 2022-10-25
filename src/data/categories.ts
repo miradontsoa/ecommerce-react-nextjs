@@ -10,6 +10,10 @@ export const categories: ProductCategory[] = [
       ref: "shoes",
     },
     {
+      name: "Dress",
+      ref: "dress",
+    },
+    {
       name: "Men",
       ref: "men",
     },

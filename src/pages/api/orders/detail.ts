@@ -39,6 +39,7 @@ export default async function handler(
     orderServices.getAddress(order?.shippingAddressRef),
     orderServices.getOrderItemsDetail(order?.items),
   ]);
+  // console.log([shipping, shippingAddress, items])
   const sum = await orderServices.totalSumOrder(items);
   orderDetail = {
     sum : sum,
