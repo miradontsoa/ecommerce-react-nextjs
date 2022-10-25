@@ -1,6 +1,7 @@
 {
   "name": "cutekit-nextjs-ecommerce",
   "private": true,
+  "license": "GPLV3",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
