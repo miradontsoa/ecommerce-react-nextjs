@@ -1,1 +1,0 @@
-Move order computation (sum) to server
